@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "107835812520",
+    "project_id": "fir-tutorial-marcosporta",
+    "storage_bucket": "fir-tutorial-marcosporta.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:107835812520:android:e263d5dcf1301e4080b09d",
+        "android_client_info": {
+          "package_name": "com.marcosporta.asocbasquetmort"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "107835812520-fos9cfun8e24bajg75tuvai1c4qm96r8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAPhFL-t2KzLYjcz1VhGpjsHrIifG_cbXI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "107835812520-fos9cfun8e24bajg75tuvai1c4qm96r8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

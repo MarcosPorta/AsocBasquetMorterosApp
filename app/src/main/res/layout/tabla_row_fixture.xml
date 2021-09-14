@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <TableRow
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/colFecha"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:gravity="center"
+            android:text="fc" />
+
+        <TextView
+            android:id="@+id/colEquipoL"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="local"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/colPtsL"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.8"
+            android:text="ptsL"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/colEstado"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:text="-"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/colPtsV"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.8"
+            android:text="ptsV"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/colEquipoV"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="visita"
+            android:gravity="center"/>
+    </TableRow>
