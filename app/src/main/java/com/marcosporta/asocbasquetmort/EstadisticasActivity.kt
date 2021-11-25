@@ -23,15 +23,15 @@ class EstadisticasActivity : AppCompatActivity() {
         setContentView(R.layout.activity_estadisticas)
         tbEstadisticas=findViewById(R.id.tbEstadisticas)
         tbEstadisticas?.removeAllViews()
-        var queue=Volley.newRequestQueue(this)
-        var url1 ="https://marcosporta.site/morterenseapp/estadisticasgf.php"
+        val queue=Volley.newRequestQueue(this)
+        val url1 ="https://marcosporta.site/morterenseapp/estadisticasgf.php"
 
-        var jsonObjectRequest=JsonObjectRequest(Request.Method.GET,url1,null,
+        val jsonObjectRequest=JsonObjectRequest(Request.Method.GET,url1,null,
             { response ->
                 try {
-                    var jsonArray = response.getJSONArray("data")
+                    val jsonArray = response.getJSONArray("data")
                     for (i in 0 until jsonArray.length()){
-                        var jsonObject=jsonArray.getJSONObject(i)
+                        val jsonObject=jsonArray.getJSONObject(i)
                         val registro=LayoutInflater.from(this).inflate(R.layout.tabla_row_estadisticas,null,false)
                         val colEquipoEst=registro.findViewById<View>(R.id.colEquipoEst) as TextView
                         var colGFEst=registro.findViewById<View>(R.id.colGFEst) as TextView

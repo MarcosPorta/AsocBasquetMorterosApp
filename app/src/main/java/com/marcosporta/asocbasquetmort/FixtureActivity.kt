@@ -22,16 +22,16 @@ class FixtureActivity : AppCompatActivity() {
         setContentView(R.layout.activity_fixture)
         tbFixture=findViewById(R.id.tbFixture)
         tbFixture?.removeAllViews()
-        var queue=Volley.newRequestQueue(this)
-        var url="https://marcosporta.site/morterenseapp/registros.php"
+        val queue=Volley.newRequestQueue(this)
+        val url="https://marcosporta.site/morterenseapp/registros.php"
 
-        var jsonObjectRequest=JsonObjectRequest(
+        val jsonObjectRequest=JsonObjectRequest(
             Request.Method.GET,url,null,
             { response ->
                 try {
-                    var jsonArray=response.getJSONArray("data")
+                    val jsonArray=response.getJSONArray("data")
                     for(i in 0 until jsonArray.length() ){
-                        var jsonObject=jsonArray.getJSONObject(i)
+                        val jsonObject=jsonArray.getJSONObject(i)
                         val registro=LayoutInflater.from(this).inflate(R.layout.tabla_row_fixture,null,false)
                         val colFecha=registro.findViewById<View>(R.id.colFecha) as TextView
                         val colEquipoL=registro.findViewById<View>(R.id.colEquipoL) as TextView

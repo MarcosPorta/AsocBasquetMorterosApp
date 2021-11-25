@@ -21,16 +21,16 @@ class PosicionesActivity : AppCompatActivity() {
         setContentView(R.layout.activity_posiciones)
         tbPosiciones=findViewById(R.id.tbPosiciones)
         tbPosiciones?.removeAllViews()
-        var queue=Volley.newRequestQueue(this)
-        var url= "https://marcosporta.site/morterenseapp/registrosp.php"
+        val queue=Volley.newRequestQueue(this)
+        val url= "https://marcosporta.site/morterenseapp/registrosp.php"
 
         //Creacion de json object request
-        var jsonObjectRequest=JsonObjectRequest(Request.Method.GET,url,null,
+        val jsonObjectRequest=JsonObjectRequest(Request.Method.GET,url,null,
             {response ->
                 try {
-                    var jsonArray= response.getJSONArray("data")
+                    val jsonArray= response.getJSONArray("data")
                     for (i in 0 until jsonArray.length() ){
-                        var jsonObject= jsonArray.getJSONObject(i)
+                        val jsonObject= jsonArray.getJSONObject(i)
                         val registro = LayoutInflater.from(this).inflate(R.layout.tabla_row_pocisiones,null,false)
                         val colEquipo=registro.findViewById<View>(R.id.colEquipo) as TextView
                         val colPj=registro.findViewById<View>(R.id.colPj) as TextView
