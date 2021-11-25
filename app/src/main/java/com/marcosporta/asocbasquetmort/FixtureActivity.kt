@@ -23,7 +23,7 @@ class FixtureActivity : AppCompatActivity() {
         tbFixture=findViewById(R.id.tbFixture)
         tbFixture?.removeAllViews()
         var queue=Volley.newRequestQueue(this)
-        var url="http://marcosporta.site/morterenseapp/registros.php"
+        var url="https://marcosporta.site/morterenseapp/registros.php"
 
         var jsonObjectRequest=JsonObjectRequest(
             Request.Method.GET,url,null,

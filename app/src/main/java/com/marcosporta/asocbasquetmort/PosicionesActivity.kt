@@ -22,7 +22,7 @@ class PosicionesActivity : AppCompatActivity() {
         tbPosiciones=findViewById(R.id.tbPosiciones)
         tbPosiciones?.removeAllViews()
         var queue=Volley.newRequestQueue(this)
-        var url= "http://marcosporta.site/morterenseapp/registrosp.php"
+        var url= "https://marcosporta.site/morterenseapp/registrosp.php"
 
         //Creacion de json object request
         var jsonObjectRequest=JsonObjectRequest(Request.Method.GET,url,null,
