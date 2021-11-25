@@ -4,17 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/fondo"
     tools:context=".MainActivity">
-
-    <ImageView
-        android:id="@+id/imageInicial"
-        android:layout_width="380dp"
-        android:layout_height="322dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.516"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ligamorterensebasquet" />
 
     <Button
         android:id="@+id/btnFixture"
@@ -49,5 +40,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnPosiciones" />
+
+    <ImageView
+        android:id="@+id/imageInicial"
+        android:layout_width="380dp"
+        android:layout_height="322dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.516"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ligamorterensebasquet" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

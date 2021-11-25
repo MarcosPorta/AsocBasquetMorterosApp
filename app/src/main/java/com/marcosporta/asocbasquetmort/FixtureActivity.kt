@@ -32,6 +32,7 @@ class FixtureActivity : AppCompatActivity() {
                     val jsonArray=response.getJSONArray("data")
                     for(i in 0 until jsonArray.length() ){
                         val jsonObject=jsonArray.getJSONObject(i)
+                        println("Fecha $i")
                         val registro=LayoutInflater.from(this).inflate(R.layout.tabla_row_fixture,null,false)
                         val colFecha=registro.findViewById<View>(R.id.colFecha) as TextView
                         val colEquipoL=registro.findViewById<View>(R.id.colEquipoL) as TextView
