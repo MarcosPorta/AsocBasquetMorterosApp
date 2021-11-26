@@ -25,7 +25,7 @@
             android:id="@+id/colPtsL"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="0.8"
+            android:layout_weight="0.7"
             android:text="ptsL"
             android:gravity="center"/>
 
@@ -41,7 +41,7 @@
             android:id="@+id/colPtsV"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="0.8"
+            android:layout_weight="0.7"
             android:text="ptsV"
             android:gravity="center"/>
 
