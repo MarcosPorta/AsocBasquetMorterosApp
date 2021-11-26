@@ -7,12 +7,20 @@
     android:background="@drawable/fondo"
     tools:context=".EstadisticasActivity">
 
+    <!-- Encabezado -->
     <TextView
         android:id="@+id/tituloEstadisticas"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="25sp"
         android:layout_marginTop="16dp"
         android:text="ESTADISTICAS"
+        android:gravity="center"
+        android:background="#FFC107"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:fontFamily="serif-monospace"
+        android:textSize="20sp"
+        android:letterSpacing="0.2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -21,49 +29,90 @@
         android:id="@+id/filaEncabezadoEst"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
+        android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tituloEstadisticas">
+
+        <!-- Titulos columnas -->
 
         <TextView
             android:id="@+id/textView12"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="4"
-            android:text="equipo" />
+            android:layout_weight="2.8"
+            android:background="#FFC107"
+            android:fontFamily="serif-monospace"
+            android:gravity="center"
+            android:letterSpacing="0.2"
+            android:text="EQUIPO"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/btnGF"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:background="#FFC107"
+            android:fontFamily="serif-monospace"
+            android:letterSpacing="0.0000"
             android:onClick="clickTablaGF"
-            android:text="GF" />
+            android:text="GF"
+            android:gravity="center"
+            android:textColor="#000000"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:backgroundTint="#FFC107" />
 
         <Button
             android:id="@+id/btnGC"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:background="#FFC107"
+            android:fontFamily="serif-monospace"
+            android:letterSpacing="0.0000"
             android:onClick="clickTablaGC"
-            android:text="GC" />
+            android:text="GC"
+            android:gravity="center"
+            android:textColor="#000000"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:backgroundTint="#FFC107" />
 
         <Button
             android:id="@+id/btnPTSL"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:background="#FFC107"
+            android:fontFamily="serif-monospace"
+            android:letterSpacing="0.0000"
             android:onClick="clickTablaPTSL"
-            android:text="PtsL" />
+            android:text="Pts L"
+            android:gravity="center"
+            android:textColor="#000000"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            app:backgroundTint="#FFC107" />
 
         <Button
             android:id="@+id/btnPTSV"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:background="#FFC107"
+            android:fontFamily="serif-monospace"
+            android:letterSpacing="0.0000"
             android:onClick="clickTablaPTSV"
-            android:text="PtsV" />
+            android:text="Pts V"
+            android:gravity="center"
+            android:textColor="#000000"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            app:backgroundTint="#FFC107" />
 
     </TableRow>
 

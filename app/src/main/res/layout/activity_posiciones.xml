@@ -7,16 +7,20 @@
     android:background="@drawable/fondo"
     tools:context=".PosicionesActivity">
 
+    <!-- Encabezado -->
     <TextView
         android:id="@+id/tituloPosiciones"
-        android:layout_width="190dp"
-        android:layout_height="32dp"
+        android:layout_width="match_parent"
+        android:layout_height="25sp"
         android:layout_marginTop="16dp"
         android:text="POSICIONES"
         android:gravity="center"
-        android:background="@color/teal_700"
+        android:background="#FFC107"
         android:textStyle="bold"
-        android:textColor="@color/design_default_color_on_secondary"
+        android:textColor="#000000"
+        android:fontFamily="serif-monospace"
+        android:textSize="20sp"
+        android:letterSpacing="0.2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -24,7 +28,7 @@
     <TableLayout
         android:id="@+id/tbPosiciones"
         android:layout_width="match_parent"
-        android:layout_height="601dp"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.428"
         app:layout_constraintStart_toStartOf="parent"
@@ -41,13 +45,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tituloPosiciones">
 
+        <!-- Titulos columnas -->
         <TextView
             android:id="@+id/textView2"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="2.8"
             android:text="EQUIPO"
-            android:gravity="center"/>
+            android:gravity="center"
+            android:background="#FFC107"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:fontFamily="serif-monospace"
+            android:textSize="20sp"
+            android:letterSpacing="0.2"/>
 
         <TextView
             android:id="@+id/textView3"
@@ -55,7 +66,13 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="PJ "
-            android:gravity="center"/>
+            android:gravity="center"
+            android:background="#FFC107"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:fontFamily="serif-monospace"
+            android:textSize="20sp"
+            android:letterSpacing="0.1"/>
 
         <TextView
             android:id="@+id/textView4"
@@ -63,7 +80,13 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="PG "
-            android:gravity="center"/>
+            android:gravity="center"
+            android:background="#FFC107"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:fontFamily="serif-monospace"
+            android:textSize="20sp"
+            android:letterSpacing="0.1"/>
 
         <TextView
             android:id="@+id/textView5"
@@ -71,7 +94,13 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="PP "
-            android:gravity="center"/>
+            android:gravity="center"
+            android:background="#FFC107"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:fontFamily="serif-monospace"
+            android:textSize="20sp"
+            android:letterSpacing="0.1"/>
 
         <TextView
             android:id="@+id/textView6"
@@ -79,7 +108,13 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="PTS "
-            android:gravity="center"/>
+            android:layout_gravity="center"
+            android:background="#FFC107"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:fontFamily="serif-monospace"
+            android:textSize="20sp"
+            android:letterSpacing="0.0"/>
 
         <TextView
             android:id="@+id/textView7"
@@ -87,7 +122,13 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="DIF "
-            android:gravity="center"/>
+            android:gravity="center"
+            android:background="#FFC107"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:fontFamily="serif-monospace"
+            android:textSize="20sp"
+            android:letterSpacing="0.0"/>
     </TableRow>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

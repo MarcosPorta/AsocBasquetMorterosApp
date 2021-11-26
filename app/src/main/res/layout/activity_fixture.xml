@@ -75,6 +75,7 @@
                 android:text="VISITANTE" />
         </TableRow>
 
+        <!-- El encabezado -->
             <TextView
                 android:id="@+id/tituloFixture"
                 android:layout_width="wrap_content"
