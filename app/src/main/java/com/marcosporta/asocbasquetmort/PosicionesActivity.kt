@@ -19,6 +19,12 @@ class PosicionesActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_posiciones)
+
+        //Poner icono en el Action Bar
+        supportActionBar?.setDisplayShowHomeEnabled(true)
+        supportActionBar?.setIcon(R.mipmap.ic_launcher)
+        supportActionBar?.setTitle("A.B.M.")
+
         tbPosiciones=findViewById(R.id.tbPosiciones)
         tbPosiciones?.removeAllViews()
         val queue=Volley.newRequestQueue(this)

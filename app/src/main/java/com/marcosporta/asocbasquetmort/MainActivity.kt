@@ -16,6 +16,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        //Poner icono en el Action Bar
+        supportActionBar?.setDisplayShowHomeEnabled(true)
+        supportActionBar?.setIcon(R.mipmap.ic_launcher)
+        supportActionBar?.setTitle("A.B.M.")
+
     }
 
     fun clickFixture(view: View){

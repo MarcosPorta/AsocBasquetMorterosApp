@@ -21,6 +21,12 @@ class EstadisticasActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_estadisticas)
+
+        //Poner icono y titulo en el Action Bar
+        supportActionBar?.setDisplayShowHomeEnabled(true)
+        supportActionBar?.setIcon(R.mipmap.ic_launcher)
+        supportActionBar?.setTitle("A.B.M.")
+
         tbEstadisticas=findViewById(R.id.tbEstadisticas)
         tbEstadisticas?.removeAllViews()
         val queue=Volley.newRequestQueue(this)

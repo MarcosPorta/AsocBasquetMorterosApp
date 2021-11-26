@@ -20,6 +20,12 @@ class FixtureActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_fixture)
+
+        //Poner icono en el Action Bar
+        supportActionBar?.setDisplayShowHomeEnabled(true)
+        supportActionBar?.setIcon(R.mipmap.ic_launcher)
+        supportActionBar?.setTitle("A.B.M.")
+
         tbFixture=findViewById(R.id.tbFixture)
         tbFixture?.removeAllViews()
         val queue=Volley.newRequestQueue(this)
