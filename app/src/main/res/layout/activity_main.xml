@@ -9,42 +9,56 @@
 
     <Button
         android:id="@+id/btnFixture"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+
         android:onClick="clickFixture"
-        android:text="FIXTURE"
+        android:text="@string/fixture"
+
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageInicial" />
 
     <Button
+
         android:id="@+id/btnPosiciones"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="8dp"
+
         android:onClick="clickPosiciones"
-        android:text="POSICIONES"
+        android:text="@string/posiciones"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnFixture" />
 
     <Button
+
         android:id="@+id/btnEstadisticas"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="8dp"
+
         android:onClick="clickEstadisticas"
-        android:text="ESTADISTICAS"
+        android:text="@string/estadisticas"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnPosiciones" />
 
     <ImageView
         android:id="@+id/imageInicial"
+        android:contentDescription="@string/app_name"
         android:layout_width="380dp"
-        android:layout_height="322dp"
+        android:layout_height="250dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toStartOf="parent"
