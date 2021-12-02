@@ -8,15 +8,18 @@
     tools:context=".MainActivity">
 
     <Button
+
         android:id="@+id/btnFixture"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="25dp"
         android:layout_marginEnd="8dp"
 
         android:onClick="clickFixture"
         android:text="@string/fixture"
+        android:padding="10sp"
+        android:textColor="@color/black"
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -33,6 +36,8 @@
 
         android:onClick="clickPosiciones"
         android:text="@string/posiciones"
+        android:padding="10sp"
+        android:textColor="@color/black"
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -49,6 +54,8 @@
 
         android:onClick="clickEstadisticas"
         android:text="@string/estadisticas"
+        android:padding="10sp"
+        android:textColor="@color/black"
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -59,6 +66,7 @@
         android:contentDescription="@string/app_name"
         android:layout_width="380dp"
         android:layout_height="250dp"
+        android:layout_marginTop="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toStartOf="parent"
