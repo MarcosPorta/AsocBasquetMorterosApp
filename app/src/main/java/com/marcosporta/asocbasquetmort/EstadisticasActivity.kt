@@ -55,7 +55,7 @@ class EstadisticasActivity : AppCompatActivity() {
                     e.printStackTrace()
                 }
             }, { error ->
-
+                    Toast.makeText(this,"Error $error ",Toast.LENGTH_LONG).show()
                 }
             )
         queue.add(jsonObjectRequest)
@@ -89,7 +89,7 @@ class EstadisticasActivity : AppCompatActivity() {
                     e.printStackTrace()
                 }
             }, { error ->
-
+                    Toast.makeText(this,"Error $error ",Toast.LENGTH_LONG).show()
             }
         )
         queue.add(jsonObjectRequest)
@@ -122,7 +122,7 @@ class EstadisticasActivity : AppCompatActivity() {
                     e.printStackTrace()
                 }
             }, { error ->
-
+                    Toast.makeText(this,"Error $error ",Toast.LENGTH_LONG).show()
             }
         )
         queue.add(jsonObjectRequest)
@@ -155,7 +155,7 @@ class EstadisticasActivity : AppCompatActivity() {
                     e.printStackTrace()
                 }
             }, { error ->
-
+                    Toast.makeText(this,"Error $error ",Toast.LENGTH_LONG).show()
             }
         )
         queue.add(jsonObjectRequest)
@@ -188,7 +188,7 @@ class EstadisticasActivity : AppCompatActivity() {
                     e.printStackTrace()
                 }
             }, { error ->
-
+                    Toast.makeText(this,"Error $error ",Toast.LENGTH_LONG).show()
             }
         )
         queue.add(jsonObjectRequest)

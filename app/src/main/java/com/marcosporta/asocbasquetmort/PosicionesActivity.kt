@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.widget.TableLayout
 import android.widget.TextView
+import android.widget.Toast
 import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.JsonObjectRequest
@@ -56,7 +57,7 @@ class PosicionesActivity : AppCompatActivity() {
                     e.printStackTrace()
                 }
             }, { error ->
-                    //Falta imprimir error.
+                    Toast.makeText(this,"Error $error ",Toast.LENGTH_LONG).show()
                 }
             )
         queue.add(jsonObjectRequest)
