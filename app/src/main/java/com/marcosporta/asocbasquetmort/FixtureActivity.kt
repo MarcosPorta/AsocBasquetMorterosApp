@@ -37,9 +37,21 @@ class FixtureActivity : AppCompatActivity() {
             { response ->
                 try {
                     val jsonArray=response.getJSONArray("data")
+                    var contador = 0
+                    var fecha = 1
                     for(i in 0 until jsonArray.length() ){
                         val jsonObject=jsonArray.getJSONObject(i)
-                        println("Fecha $i")
+
+                        //Imprime encabezados de las fechas.
+                        if(contador === i && fecha <= 14){
+                            val registro2 = LayoutInflater.from(this).inflate(R.layout.tabla_row_fecha, null, false)
+                            val colNumeroFecha = registro2.findViewById<View>(R.id.colNumeroFecha) as TextView
+                            colNumeroFecha.text = "Fecha: " + fecha
+                            tbFixture?.addView(registro2)
+                            fecha += 1
+                            contador += 3
+                        }
+
                         val registro=LayoutInflater.from(this).inflate(R.layout.tabla_row_fixture,null,false)
                         val colFecha=registro.findViewById<View>(R.id.colFecha) as TextView
                         val colEquipoL=registro.findViewById<View>(R.id.colEquipoL) as TextView
@@ -63,24 +75,5 @@ class FixtureActivity : AppCompatActivity() {
                 }
             )
         queue.add(jsonObjectRequest)
-        /*
-        for (i in 0 until 8){
-            val registro=LayoutInflater.from(this).inflate(R.layout.tabla_row_fixture,null,false)
-            //Aca puedo pensar en como meter los "titulos" de cada fecha
-            val colFecha=registro.findViewById<View>(R.id.colFecha) as TextView
-            val colEquipoL=registro.findViewById<View>(R.id.colEquipoL) as TextView
-            val colPtsL=registro.findViewById<View>(R.id.colPtsL) as TextView
-            val colEstado=registro.findViewById<View>(R.id.colEstado) as TextView
-            val colPtsV=registro.findViewById<View>(R.id.colPtsV) as TextView
-            val colEquipoV=registro.findViewById<View>(R.id.colEquipoV) as TextView
-            colFecha.text="Fecha $i"
-            colEquipoL.text="EquipoL $i"
-            colPtsL.text="PtsL $i"
-            colEstado.text="Estado $i"
-            colPtsV.text="PtsV $i"
-            colEquipoV.text="EquipoV $i"
-            tbFixture?.addView(registro)
-        }
-         */
     }
 }
