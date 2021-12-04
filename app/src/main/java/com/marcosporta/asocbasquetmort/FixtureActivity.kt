@@ -44,7 +44,7 @@ class FixtureActivity : AppCompatActivity() {
                         if(contador === i && fecha <= 14){
                             val registro2 = LayoutInflater.from(this).inflate(R.layout.tabla_row_fecha, null, false)
                             val colNumeroFecha = registro2.findViewById<View>(R.id.colNumeroFecha) as TextView
-                            colNumeroFecha.text = "Fecha: " + fecha
+                            colNumeroFecha.text = "Fecha " + fecha
                             tbFixture?.addView(registro2)
                             fecha += 1
                             contador += 3

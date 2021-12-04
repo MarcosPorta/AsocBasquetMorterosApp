@@ -3,5 +3,6 @@
     <string name="estadisticas">ESTADISTICAS</string>
     <string name="fixture">FIXTURE</string>
     <string name="posiciones">POSICIONES</string>
+    <string name="fecha">Fecha</string>
 
 </resources>
