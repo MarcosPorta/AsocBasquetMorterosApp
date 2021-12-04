@@ -7,18 +7,6 @@
         android:background="@drawable/style_borde_text">
 
         <TextView
-            android:id="@+id/colFecha"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="0.5"
-            android:gravity="center"
-            android:text="fc"
-            android:textColor="#000000"
-            android:fontFamily="serif-monospace"
-            android:textSize="18sp"
-            android:autoSizeTextType="uniform" />
-
-        <TextView
             android:id="@+id/colEquipoL"
             android:layout_width="0dp"
             android:layout_height="match_parent"

@@ -1,6 +1,5 @@
 package com.marcosporta.asocbasquetmort
 
-import android.app.DownloadManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,7 +8,6 @@ import android.widget.TableLayout
 import android.widget.TextView
 import android.widget.Toast
 import com.android.volley.Request
-import com.android.volley.Response
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
 import org.json.JSONException
@@ -53,13 +51,11 @@ class FixtureActivity : AppCompatActivity() {
                         }
 
                         val registro=LayoutInflater.from(this).inflate(R.layout.tabla_row_fixture,null,false)
-                        val colFecha=registro.findViewById<View>(R.id.colFecha) as TextView
                         val colEquipoL=registro.findViewById<View>(R.id.colEquipoL) as TextView
                         val colPtsL=registro.findViewById<View>(R.id.colPtsL) as TextView
                         val colEstado=registro.findViewById<View>(R.id.colEstado) as TextView
                         val colPtsV=registro.findViewById<View>(R.id.colPtsV) as TextView
                         val colEquipoV=registro.findViewById<View>(R.id.colEquipoV) as TextView
-                        colFecha.text=jsonObject.getString("fecha")
                         colEquipoL.text=jsonObject.getString("equipol")
                         colPtsL.text=jsonObject.getString("ptsl")
                         colEstado.text=jsonObject.getString("estado")
