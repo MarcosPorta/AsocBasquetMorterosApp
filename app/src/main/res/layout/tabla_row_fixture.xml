@@ -27,8 +27,7 @@
             android:gravity="center"
             android:textColor="#000000"
             android:fontFamily="serif-monospace"
-            android:textSize="18sp"
-            android:autoSizeTextType="uniform" />
+            android:textSize="18sp"/>
 
         <TextView
             android:id="@+id/colEstado"
@@ -39,7 +38,7 @@
             android:gravity="center"
             android:textColor="#000000"
             android:fontFamily="serif-monospace"
-            android:textSize="18sp"
+            android:textSize="15sp"
             android:autoSizeTextType="uniform" />
 
         <TextView
@@ -51,8 +50,7 @@
             android:gravity="center"
             android:textColor="#000000"
             android:fontFamily="serif-monospace"
-            android:textSize="18sp"
-            android:autoSizeTextType="uniform" />
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/colEquipoV"
