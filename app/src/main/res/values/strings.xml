@@ -4,5 +4,7 @@
     <string name="fixture">FIXTURE</string>
     <string name="posiciones">POSICIONES</string>
     <string name="fecha">Fecha</string>
+    <string name="temp_regular">Temp. Regular</string>
+    <string name="playoffs">Playoffs</string>
 
 </resources>

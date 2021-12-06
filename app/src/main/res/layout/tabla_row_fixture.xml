@@ -15,8 +15,7 @@
             android:gravity="center"
             android:textColor="#000000"
             android:fontFamily="serif-monospace"
-            android:textSize="18sp"
-            android:autoSizeTextType="uniform" />
+            android:textSize="18sp"/>
 
         <TextView
             android:id="@+id/colPtsL"
@@ -38,8 +37,7 @@
             android:gravity="center"
             android:textColor="#000000"
             android:fontFamily="serif-monospace"
-            android:textSize="15sp"
-            android:autoSizeTextType="uniform" />
+            android:textSize="15sp" />
 
         <TextView
             android:id="@+id/colPtsV"
@@ -61,6 +59,5 @@
             android:gravity="center"
             android:textColor="#000000"
             android:fontFamily="serif-monospace"
-            android:textSize="18sp"
-            android:autoSizeTextType="uniform" />
+            android:textSize="18sp" />
     </TableRow>

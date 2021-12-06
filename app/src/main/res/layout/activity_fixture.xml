@@ -12,6 +12,71 @@
         android:layout_height="match_parent"
         tools:context=".FixtureActivity">
 
+        <!-- Encabezado -->
+        <TextView
+            android:id="@+id/tituloFixture"
+            android:layout_width="match_parent"
+            android:layout_height="25sp"
+            android:layout_marginTop="16dp"
+            android:text="FIXTURE"
+            android:gravity="center"
+            android:background="#FFC107"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:fontFamily="serif-monospace"
+            android:textSize="20sp"
+            android:letterSpacing="0.2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Botones de Temp regular y playoffs -->
+        <TableRow
+            android:id="@+id/sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tituloFixture"
+            android:background="@drawable/style_borde_btn">
+
+            <Button
+                android:id="@+id/btnTempRegular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#FFC107"
+                android:fontFamily="serif-monospace"
+                android:letterSpacing="0.05"
+                android:onClick="clickTablaTempRegular"
+                android:text="@string/temp_regular"
+                android:gravity="center"
+                android:textColor="#000000"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:backgroundTint="#FFC107" />
+
+            <Button
+                android:id="@+id/btnPlayoffs"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#FFC107"
+                android:fontFamily="serif-monospace"
+                android:letterSpacing="0.05"
+                android:onClick="clickTablaPlayoffs"
+                android:text="@string/playoffs"
+                android:gravity="center"
+                android:textColor="#000000"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:backgroundTint="#FFC107" />
+
+        </TableRow>
+
+
         <TableRow
             android:id="@+id/filaEncabezadoFix"
             android:layout_width="0dp"
@@ -20,7 +85,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tituloFixture">
+            app:layout_constraintTop_toBottomOf="@+id/sp">
 
             <!-- Titulos columnas -->
             <TextView
@@ -63,24 +128,6 @@
                 android:textStyle="bold" />
         </TableRow>
 
-        <!-- Encabezado -->
-            <TextView
-                android:id="@+id/tituloFixture"
-                android:layout_width="match_parent"
-                android:layout_height="25sp"
-                android:layout_marginTop="16dp"
-                android:text="FIXTURE"
-                android:gravity="center"
-                android:background="#FFC107"
-                android:textStyle="bold"
-                android:textColor="#000000"
-                android:fontFamily="serif-monospace"
-                android:textSize="20sp"
-                android:letterSpacing="0.2"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"  />
-
             <TableLayout
                 android:id="@+id/tbFixture"
                 android:layout_width="match_parent"
@@ -90,5 +137,5 @@
                 app:layout_constraintTop_toBottomOf="@+id/filaEncabezadoFix">
             </TableLayout>
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
             </ScrollView>
