@@ -21,7 +21,7 @@ class FixtureActivity : AppCompatActivity() {
         //Poner icono en el Action Bar
         supportActionBar?.setDisplayShowHomeEnabled(true)
         supportActionBar?.setIcon(R.mipmap.ic_launcher)
-        supportActionBar?.setTitle("A.B.M.")
+        supportActionBar?.title = ("A.B.M.")
 
         tbFixture=findViewById(R.id.tbFixture)
         tbFixture?.removeAllViews()
@@ -43,7 +43,7 @@ class FixtureActivity : AppCompatActivity() {
                         if(contador === i && fecha <= 14){
                             val registro2 = LayoutInflater.from(this).inflate(R.layout.tabla_row_fecha, null, false)
                             val colNumeroFecha = registro2.findViewById<View>(R.id.colNumeroFecha) as TextView
-                            colNumeroFecha.text = "Fecha " + fecha
+                            colNumeroFecha.text = "Fecha $fecha"
                             tbFixture?.addView(registro2)
                             fecha += 1
                             contador += 3
@@ -91,7 +91,7 @@ class FixtureActivity : AppCompatActivity() {
                         if(contador === i && fecha <= 14){
                             val registro2 = LayoutInflater.from(this).inflate(R.layout.tabla_row_fecha, null, false)
                             val colNumeroFecha = registro2.findViewById<View>(R.id.colNumeroFecha) as TextView
-                            colNumeroFecha.text = "Fecha " + fecha
+                            colNumeroFecha.text = "Fecha $fecha"
                             tbFixture?.addView(registro2)
                             fecha += 1
                             contador += 3
@@ -133,7 +133,7 @@ class FixtureActivity : AppCompatActivity() {
 
                     var contArray = 1
                     var estadoAnterior = 20
-                    var arrayPlayoffs = arrayListOf<String>("Cuartos - Juego 1", "Cuartos - Juego 2", "Cuartos - Juego 3",
+                    val arrayPlayoffs = arrayListOf<String>("Cuartos - Juego 1", "Cuartos - Juego 2", "Cuartos - Juego 3",
                         "Semifinales - Juego 1", "Semifinales - Juego 2", "Semifinales - Juego 3", "Finales")
 
                     val registro3 = LayoutInflater.from(this).inflate(R.layout.tabla_row_fecha, null, false)
@@ -145,7 +145,7 @@ class FixtureActivity : AppCompatActivity() {
                         val jsonObject=jsonArray.getJSONObject(i)
 
                         //Accediendo a un campo de la base de datos (fecha)
-                        var pruebaFecha = jsonObject.getInt("fecha")
+                        val pruebaFecha = jsonObject.getInt("fecha")
 
 
                         //Imprime encabezados de las fechas.

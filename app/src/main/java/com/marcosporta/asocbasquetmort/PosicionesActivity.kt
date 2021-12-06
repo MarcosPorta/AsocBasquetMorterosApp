@@ -8,7 +8,6 @@ import android.widget.TableLayout
 import android.widget.TextView
 import android.widget.Toast
 import com.android.volley.Request
-import com.android.volley.Response
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
 import org.json.JSONException
@@ -24,7 +23,7 @@ class PosicionesActivity : AppCompatActivity() {
         //Poner icono en el Action Bar
         supportActionBar?.setDisplayShowHomeEnabled(true)
         supportActionBar?.setIcon(R.mipmap.ic_launcher)
-        supportActionBar?.setTitle("A.B.M.")
+        supportActionBar?.title = "A.B.M."
 
         tbPosiciones=findViewById(R.id.tbPosiciones)
         tbPosiciones?.removeAllViews()

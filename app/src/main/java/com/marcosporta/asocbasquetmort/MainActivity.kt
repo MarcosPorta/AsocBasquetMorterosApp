@@ -4,7 +4,6 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
 import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
@@ -19,7 +18,7 @@ class MainActivity : AppCompatActivity() {
         //Poner icono en el Action Bar
         supportActionBar?.setDisplayShowHomeEnabled(true)
         supportActionBar?.setIcon(R.mipmap.ic_launcher)
-        supportActionBar?.setTitle("A.B.M.")
+        supportActionBar?.title = "A.B.M."
 
     }
 

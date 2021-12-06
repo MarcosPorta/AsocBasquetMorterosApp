@@ -1,6 +1,5 @@
 package com.marcosporta.asocbasquetmort
 
-import android.app.DownloadManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,7 +8,6 @@ import android.widget.TableLayout
 import android.widget.TextView
 import android.widget.Toast
 import com.android.volley.Request
-import com.android.volley.Response
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
 import org.json.JSONException
@@ -25,7 +23,7 @@ class EstadisticasActivity : AppCompatActivity() {
         //Poner icono y titulo en el Action Bar
         supportActionBar?.setDisplayShowHomeEnabled(true)
         supportActionBar?.setIcon(R.mipmap.ic_launcher)
-        supportActionBar?.setTitle("A.B.M.")
+        supportActionBar?.title = "A.B.M."
 
         tbEstadisticas=findViewById(R.id.tbEstadisticas)
         tbEstadisticas?.removeAllViews()
@@ -40,10 +38,10 @@ class EstadisticasActivity : AppCompatActivity() {
                         val jsonObject=jsonArray.getJSONObject(i)
                         val registro=LayoutInflater.from(this).inflate(R.layout.tabla_row_estadisticas,null,false)
                         val colEquipoEst=registro.findViewById<View>(R.id.colEquipoEst) as TextView
-                        var colGFEst=registro.findViewById<View>(R.id.colGFEst) as TextView
-                        var colGCEst=registro.findViewById<View>(R.id.colGCEst) as TextView
-                        var colPtsLEst=registro.findViewById<View>(R.id.colPtsLEst) as TextView
-                        var colPtsVEst=registro.findViewById<View>(R.id.colPtsVEst) as TextView
+                        val colGFEst=registro.findViewById<View>(R.id.colGFEst) as TextView
+                        val colGCEst=registro.findViewById<View>(R.id.colGCEst) as TextView
+                        val colPtsLEst=registro.findViewById<View>(R.id.colPtsLEst) as TextView
+                        val colPtsVEst=registro.findViewById<View>(R.id.colPtsVEst) as TextView
                         colEquipoEst.text=jsonObject.getString("equipo")
                         colGFEst.text=jsonObject.getString("gf")
                         colGCEst.text=jsonObject.getString("gc")
@@ -74,10 +72,10 @@ class EstadisticasActivity : AppCompatActivity() {
                         val jsonObject=jsonArray.getJSONObject(i)
                         val registro=LayoutInflater.from(this).inflate(R.layout.tabla_row_estadisticas,null,false)
                         val colEquipoEst=registro.findViewById<View>(R.id.colEquipoEst) as TextView
-                        var colGFEst=registro.findViewById<View>(R.id.colGFEst) as TextView
-                        var colGCEst=registro.findViewById<View>(R.id.colGCEst) as TextView
-                        var colPtsLEst=registro.findViewById<View>(R.id.colPtsLEst) as TextView
-                        var colPtsVEst=registro.findViewById<View>(R.id.colPtsVEst) as TextView
+                        val colGFEst=registro.findViewById<View>(R.id.colGFEst) as TextView
+                        val colGCEst=registro.findViewById<View>(R.id.colGCEst) as TextView
+                        val colPtsLEst=registro.findViewById<View>(R.id.colPtsLEst) as TextView
+                        val colPtsVEst=registro.findViewById<View>(R.id.colPtsVEst) as TextView
                         colEquipoEst.text=jsonObject.getString("equipo")
                         colGFEst.text=jsonObject.getString("gf")
                         colGCEst.text=jsonObject.getString("gc")
@@ -107,10 +105,10 @@ class EstadisticasActivity : AppCompatActivity() {
                         val jsonObject=jsonArray.getJSONObject(i)
                         val registro=LayoutInflater.from(this).inflate(R.layout.tabla_row_estadisticas,null,false)
                         val colEquipoEst=registro.findViewById<View>(R.id.colEquipoEst) as TextView
-                        var colGFEst=registro.findViewById<View>(R.id.colGFEst) as TextView
-                        var colGCEst=registro.findViewById<View>(R.id.colGCEst) as TextView
-                        var colPtsLEst=registro.findViewById<View>(R.id.colPtsLEst) as TextView
-                        var colPtsVEst=registro.findViewById<View>(R.id.colPtsVEst) as TextView
+                        val colGFEst=registro.findViewById<View>(R.id.colGFEst) as TextView
+                        val colGCEst=registro.findViewById<View>(R.id.colGCEst) as TextView
+                        val colPtsLEst=registro.findViewById<View>(R.id.colPtsLEst) as TextView
+                        val colPtsVEst=registro.findViewById<View>(R.id.colPtsVEst) as TextView
                         colEquipoEst.text=jsonObject.getString("equipo")
                         colGFEst.text=jsonObject.getString("gf")
                         colGCEst.text=jsonObject.getString("gc")
@@ -140,10 +138,10 @@ class EstadisticasActivity : AppCompatActivity() {
                         val jsonObject=jsonArray.getJSONObject(i)
                         val registro=LayoutInflater.from(this).inflate(R.layout.tabla_row_estadisticas,null,false)
                         val colEquipoEst=registro.findViewById<View>(R.id.colEquipoEst) as TextView
-                        var colGFEst=registro.findViewById<View>(R.id.colGFEst) as TextView
-                        var colGCEst=registro.findViewById<View>(R.id.colGCEst) as TextView
-                        var colPtsLEst=registro.findViewById<View>(R.id.colPtsLEst) as TextView
-                        var colPtsVEst=registro.findViewById<View>(R.id.colPtsVEst) as TextView
+                        val colGFEst=registro.findViewById<View>(R.id.colGFEst) as TextView
+                        val colGCEst=registro.findViewById<View>(R.id.colGCEst) as TextView
+                        val colPtsLEst=registro.findViewById<View>(R.id.colPtsLEst) as TextView
+                        val colPtsVEst=registro.findViewById<View>(R.id.colPtsVEst) as TextView
                         colEquipoEst.text=jsonObject.getString("equipo")
                         colGFEst.text=jsonObject.getString("gf")
                         colGCEst.text=jsonObject.getString("gc")
@@ -173,10 +171,10 @@ class EstadisticasActivity : AppCompatActivity() {
                         val jsonObject=jsonArray.getJSONObject(i)
                         val registro=LayoutInflater.from(this).inflate(R.layout.tabla_row_estadisticas,null,false)
                         val colEquipoEst=registro.findViewById<View>(R.id.colEquipoEst) as TextView
-                        var colGFEst=registro.findViewById<View>(R.id.colGFEst) as TextView
-                        var colGCEst=registro.findViewById<View>(R.id.colGCEst) as TextView
-                        var colPtsLEst=registro.findViewById<View>(R.id.colPtsLEst) as TextView
-                        var colPtsVEst=registro.findViewById<View>(R.id.colPtsVEst) as TextView
+                        val colGFEst=registro.findViewById<View>(R.id.colGFEst) as TextView
+                        val colGCEst=registro.findViewById<View>(R.id.colGCEst) as TextView
+                        val colPtsLEst=registro.findViewById<View>(R.id.colPtsLEst) as TextView
+                        val colPtsVEst=registro.findViewById<View>(R.id.colPtsVEst) as TextView
                         colEquipoEst.text=jsonObject.getString("equipo")
                         colGFEst.text=jsonObject.getString("gf")
                         colGCEst.text=jsonObject.getString("gc")
