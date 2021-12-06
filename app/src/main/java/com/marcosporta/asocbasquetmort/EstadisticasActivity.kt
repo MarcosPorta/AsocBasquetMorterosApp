@@ -65,7 +65,7 @@ class EstadisticasActivity : AppCompatActivity() {
         tbEstadisticas?.removeAllViews()
         val queue=Volley.newRequestQueue(this)
         val url1 ="https://marcosporta.site/morterenseapp/estadisticasgf.php"
-        Toast.makeText(this,"Mas goles convertidos",Toast.LENGTH_SHORT).show()
+        Toast.makeText(this,"Promedio de goles convertidos",Toast.LENGTH_SHORT).show()
         val jsonObjectRequest=JsonObjectRequest(Request.Method.GET,url1,null,
             { response ->
                 try {
@@ -98,7 +98,7 @@ class EstadisticasActivity : AppCompatActivity() {
         tbEstadisticas?.removeAllViews()
         val queue=Volley.newRequestQueue(this)
         val url2 ="https://marcosporta.site/morterenseapp/estadisticasgc.php"
-        Toast.makeText(this,"Mas goles concedidos",Toast.LENGTH_SHORT).show()
+        Toast.makeText(this,"Promedio de goles concedidos",Toast.LENGTH_SHORT).show()
         val jsonObjectRequest=JsonObjectRequest(Request.Method.GET,url2,null,
             { response ->
                 try {
@@ -131,7 +131,7 @@ class EstadisticasActivity : AppCompatActivity() {
         tbEstadisticas?.removeAllViews()
         val queue=Volley.newRequestQueue(this)
         val url3 ="https://marcosporta.site/morterenseapp/estadisticasptsl.php"
-        Toast.makeText(this,"Mas puntos obtenidos de local",Toast.LENGTH_SHORT).show()
+        Toast.makeText(this,"Puntos obtenidos de local",Toast.LENGTH_SHORT).show()
         val jsonObjectRequest=JsonObjectRequest(Request.Method.GET,url3,null,
             { response ->
                 try {
@@ -164,7 +164,7 @@ class EstadisticasActivity : AppCompatActivity() {
         tbEstadisticas?.removeAllViews()
         val queue=Volley.newRequestQueue(this)
         val url4 ="https://marcosporta.site/morterenseapp/estadisticasptsv.php"
-        Toast.makeText(this,"Mas puntos obtenidos de visitante",Toast.LENGTH_SHORT).show()
+        Toast.makeText(this,"Puntos obtenidos de visitante",Toast.LENGTH_SHORT).show()
         val jsonObjectRequest=JsonObjectRequest(Request.Method.GET,url4,null,
             { response ->
                 try {

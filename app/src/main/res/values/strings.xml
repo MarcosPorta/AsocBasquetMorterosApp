@@ -6,5 +6,10 @@
     <string name="fecha">Fecha</string>
     <string name="temp_regular">Temp. Regular</string>
     <string name="playoffs">Playoffs</string>
+    <string name="prom_goles_covertidos">GF</string>
+    <string name="prom_goles_concedidos">GC</string>
+    <string name="equipo">EQUIPO</string>
+    <string name="porc_put_local">PTS L</string>
+    <string name="porc_pts_vistante">PTS V</string>
 
 </resources>
