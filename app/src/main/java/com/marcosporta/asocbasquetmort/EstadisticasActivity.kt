@@ -26,144 +26,29 @@ class EstadisticasActivity : AppCompatActivity() {
         supportActionBar?.title = "A.B.M."
 
         tbEstadisticas=findViewById(R.id.tbEstadisticas)
-        tbEstadisticas?.removeAllViews()
-        val queue=Volley.newRequestQueue(this)
-        val url1 ="https://marcosporta.site/morterenseapp/estadisticasgf.php"
 
-        val jsonObjectRequest=JsonObjectRequest(Request.Method.GET,url1,null,
-            { response ->
-                try {
-                    val jsonArray = response.getJSONArray("data")
-                    for (i in 0 until jsonArray.length()){
-                        val jsonObject=jsonArray.getJSONObject(i)
-                        val registro=LayoutInflater.from(this).inflate(R.layout.tabla_row_estadisticas,null,false)
-                        val colEquipoEst=registro.findViewById<View>(R.id.colEquipoEst) as TextView
-                        val colGFEst=registro.findViewById<View>(R.id.colGFEst) as TextView
-                        val colGCEst=registro.findViewById<View>(R.id.colGCEst) as TextView
-                        val colPtsLEst=registro.findViewById<View>(R.id.colPtsLEst) as TextView
-                        val colPtsVEst=registro.findViewById<View>(R.id.colPtsVEst) as TextView
-                        colEquipoEst.text=jsonObject.getString("equipo")
-                        colGFEst.text=jsonObject.getString("gf")
-                        colGCEst.text=jsonObject.getString("gc")
-                        colPtsLEst.text=jsonObject.getString("ptsl")
-                        colPtsVEst.text=jsonObject.getString("ptsv")
-                        tbEstadisticas?.addView(registro)
-                    }
-                }catch (e: JSONException){
-                    e.printStackTrace()
-                }
-            }, { error ->
-                    Toast.makeText(this,"Error $error ",Toast.LENGTH_LONG).show()
-                }
-            )
-        queue.add(jsonObjectRequest)
-
+        llenarTablaEstadisticas("https://marcosporta.site/morterenseapp/estadisticasgf.php","Promedio de goles convertidos")
     }
     fun clickTablaGF(view: View){
-        tbEstadisticas?.removeAllViews()
-        val queue=Volley.newRequestQueue(this)
-        val url1 ="https://marcosporta.site/morterenseapp/estadisticasgf.php"
-        Toast.makeText(this,"Promedio de goles convertidos",Toast.LENGTH_SHORT).show()
-        val jsonObjectRequest=JsonObjectRequest(Request.Method.GET,url1,null,
-            { response ->
-                try {
-                    val jsonArray = response.getJSONArray("data")
-                    for (i in 0 until jsonArray.length()){
-                        val jsonObject=jsonArray.getJSONObject(i)
-                        val registro=LayoutInflater.from(this).inflate(R.layout.tabla_row_estadisticas,null,false)
-                        val colEquipoEst=registro.findViewById<View>(R.id.colEquipoEst) as TextView
-                        val colGFEst=registro.findViewById<View>(R.id.colGFEst) as TextView
-                        val colGCEst=registro.findViewById<View>(R.id.colGCEst) as TextView
-                        val colPtsLEst=registro.findViewById<View>(R.id.colPtsLEst) as TextView
-                        val colPtsVEst=registro.findViewById<View>(R.id.colPtsVEst) as TextView
-                        colEquipoEst.text=jsonObject.getString("equipo")
-                        colGFEst.text=jsonObject.getString("gf")
-                        colGCEst.text=jsonObject.getString("gc")
-                        colPtsLEst.text=jsonObject.getString("ptsl")
-                        colPtsVEst.text=jsonObject.getString("ptsv")
-                        tbEstadisticas?.addView(registro)
-                    }
-                }catch (e: JSONException){
-                    e.printStackTrace()
-                }
-            }, { error ->
-                    Toast.makeText(this,"Error $error ",Toast.LENGTH_LONG).show()
-            }
-        )
-        queue.add(jsonObjectRequest)
+        llenarTablaEstadisticas("https://marcosporta.site/morterenseapp/estadisticasgf.php","Promedio de goles convertidos")
     }
     fun clickTablaGC(view: View){
-        tbEstadisticas?.removeAllViews()
-        val queue=Volley.newRequestQueue(this)
-        val url2 ="https://marcosporta.site/morterenseapp/estadisticasgc.php"
-        Toast.makeText(this,"Promedio de goles concedidos",Toast.LENGTH_SHORT).show()
-        val jsonObjectRequest=JsonObjectRequest(Request.Method.GET,url2,null,
-            { response ->
-                try {
-                    val jsonArray = response.getJSONArray("data")
-                    for (i in 0 until jsonArray.length()){
-                        val jsonObject=jsonArray.getJSONObject(i)
-                        val registro=LayoutInflater.from(this).inflate(R.layout.tabla_row_estadisticas,null,false)
-                        val colEquipoEst=registro.findViewById<View>(R.id.colEquipoEst) as TextView
-                        val colGFEst=registro.findViewById<View>(R.id.colGFEst) as TextView
-                        val colGCEst=registro.findViewById<View>(R.id.colGCEst) as TextView
-                        val colPtsLEst=registro.findViewById<View>(R.id.colPtsLEst) as TextView
-                        val colPtsVEst=registro.findViewById<View>(R.id.colPtsVEst) as TextView
-                        colEquipoEst.text=jsonObject.getString("equipo")
-                        colGFEst.text=jsonObject.getString("gf")
-                        colGCEst.text=jsonObject.getString("gc")
-                        colPtsLEst.text=jsonObject.getString("ptsl")
-                        colPtsVEst.text=jsonObject.getString("ptsv")
-                        tbEstadisticas?.addView(registro)
-                    }
-                }catch (e: JSONException){
-                    e.printStackTrace()
-                }
-            }, { error ->
-                    Toast.makeText(this,"Error $error ",Toast.LENGTH_LONG).show()
-            }
-        )
-        queue.add(jsonObjectRequest)
+        llenarTablaEstadisticas("https://marcosporta.site/morterenseapp/estadisticasgc.php","Promedio de goles concedidos")
     }
     fun clickTablaPTSL(view: View){
-        tbEstadisticas?.removeAllViews()
-        val queue=Volley.newRequestQueue(this)
-        val url3 ="https://marcosporta.site/morterenseapp/estadisticasptsl.php"
-        Toast.makeText(this,"Puntos obtenidos de local",Toast.LENGTH_SHORT).show()
-        val jsonObjectRequest=JsonObjectRequest(Request.Method.GET,url3,null,
-            { response ->
-                try {
-                    val jsonArray = response.getJSONArray("data")
-                    for (i in 0 until jsonArray.length()){
-                        val jsonObject=jsonArray.getJSONObject(i)
-                        val registro=LayoutInflater.from(this).inflate(R.layout.tabla_row_estadisticas,null,false)
-                        val colEquipoEst=registro.findViewById<View>(R.id.colEquipoEst) as TextView
-                        val colGFEst=registro.findViewById<View>(R.id.colGFEst) as TextView
-                        val colGCEst=registro.findViewById<View>(R.id.colGCEst) as TextView
-                        val colPtsLEst=registro.findViewById<View>(R.id.colPtsLEst) as TextView
-                        val colPtsVEst=registro.findViewById<View>(R.id.colPtsVEst) as TextView
-                        colEquipoEst.text=jsonObject.getString("equipo")
-                        colGFEst.text=jsonObject.getString("gf")
-                        colGCEst.text=jsonObject.getString("gc")
-                        colPtsLEst.text=jsonObject.getString("ptsl")
-                        colPtsVEst.text=jsonObject.getString("ptsv")
-                        tbEstadisticas?.addView(registro)
-                    }
-                }catch (e: JSONException){
-                    e.printStackTrace()
-                }
-            }, { error ->
-                    Toast.makeText(this,"Error $error ",Toast.LENGTH_LONG).show()
-            }
-        )
-        queue.add(jsonObjectRequest)
+        llenarTablaEstadisticas("https://marcosporta.site/morterenseapp/estadisticasptsl.php","Puntos obtenidos de local")
     }
     fun clickTablaPTSV(view: View){
+        llenarTablaEstadisticas("https://marcosporta.site/morterenseapp/estadisticasptsv.php","Puntos obtenidos de visitante")
+    }
+
+    //Funcion general, al pasarle una url y un texto te completa la tabla
+    fun llenarTablaEstadisticas(url : String, textoToast : String){
         tbEstadisticas?.removeAllViews()
         val queue=Volley.newRequestQueue(this)
-        val url4 ="https://marcosporta.site/morterenseapp/estadisticasptsv.php"
-        Toast.makeText(this,"Puntos obtenidos de visitante",Toast.LENGTH_SHORT).show()
-        val jsonObjectRequest=JsonObjectRequest(Request.Method.GET,url4,null,
+
+        Toast.makeText(this,textoToast,Toast.LENGTH_SHORT).show()
+        val jsonObjectRequest=JsonObjectRequest(Request.Method.GET,url,null,
             { response ->
                 try {
                     val jsonArray = response.getJSONArray("data")
@@ -186,7 +71,7 @@ class EstadisticasActivity : AppCompatActivity() {
                     e.printStackTrace()
                 }
             }, { error ->
-                    Toast.makeText(this,"Error $error ",Toast.LENGTH_LONG).show()
+                Toast.makeText(this,"Error $error ",Toast.LENGTH_LONG).show()
             }
         )
         queue.add(jsonObjectRequest)

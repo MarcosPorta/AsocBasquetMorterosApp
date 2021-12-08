@@ -11,5 +11,6 @@
     <string name="equipo">EQUIPO</string>
     <string name="porc_put_local">PTS L</string>
     <string name="porc_pts_vistante">PTS V</string>
+    <string name="fecha_para_temp_regular">Fecha: %1$d</string>
 
 </resources>
