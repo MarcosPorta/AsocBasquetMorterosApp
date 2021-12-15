@@ -10,15 +10,23 @@ import android.widget.Toast
 import com.android.volley.Request
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.AdView
+
 import org.json.JSONException
 
 class PosicionesActivity : AppCompatActivity() {
-
     var tbPosiciones:TableLayout?=null
+    lateinit var myAdView : AdView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_posiciones)
+
+        //Para banner
+        myAdView = findViewById(R.id.banner)
+        val adRequest = AdRequest.Builder().build()
+        myAdView.loadAd(adRequest)
 
         //Poner icono en el Action Bar
         supportActionBar?.setDisplayShowHomeEnabled(true)

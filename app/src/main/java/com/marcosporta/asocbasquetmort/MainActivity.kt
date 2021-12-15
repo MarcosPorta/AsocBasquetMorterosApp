@@ -5,15 +5,21 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.AdView
 
 class MainActivity : AppCompatActivity() {
 
-    //var btnFixture:Button?=null
-    //var btnPosicione:Button?=null
+    lateinit var myAdView : AdView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        //Para banner
+        myAdView = findViewById(R.id.banner)
+        val adRequest = AdRequest.Builder().build()
+        myAdView.loadAd(adRequest)
 
         //Poner icono en el Action Bar
         supportActionBar?.setDisplayShowHomeEnabled(true)
