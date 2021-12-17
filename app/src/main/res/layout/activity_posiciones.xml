@@ -15,9 +15,9 @@
         android:layout_centerHorizontal="true"
         app:adSize="BANNER"
         app:adUnitId="ca-app-pub-3940256099942544/6300978111"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
     </com.google.android.gms.ads.AdView>
 
@@ -38,17 +38,7 @@
         android:letterSpacing="0.2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TableLayout
-        android:id="@+id/tbPosiciones"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/filaEncabezadoPos">
-
-    </TableLayout>
+        app:layout_constraintTop_toBottomOf="@+id/banner" />
 
     <TableRow
         android:id="@+id/filaEncabezadoPos"
@@ -144,5 +134,14 @@
             android:textSize="20sp"
             android:letterSpacing="0.0"/>
     </TableRow>
+
+    <TableLayout
+        android:id="@+id/tbPosiciones"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/filaEncabezadoPos">
+    </TableLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

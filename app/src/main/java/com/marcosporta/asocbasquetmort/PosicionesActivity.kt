@@ -12,6 +12,7 @@ import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.AdView
+import com.google.android.gms.ads.MobileAds
 
 import org.json.JSONException
 
@@ -24,6 +25,7 @@ class PosicionesActivity : AppCompatActivity() {
         setContentView(R.layout.activity_posiciones)
 
         //Para banner
+        MobileAds.initialize(this) {}
         myAdView = findViewById(R.id.banner)
         val adRequest = AdRequest.Builder().build()
         myAdView.loadAd(adRequest)
