@@ -3,66 +3,69 @@
     <TableRow
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="30dp"
         android:gravity="center"
         android:background="@drawable/style_borde_text">
 
         <TextView
             android:id="@+id/colEquipoEst"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="30dp"
             android:layout_weight="2.8"
-            android:gravity="left"
-            android:text="Equipo"
+            android:gravity="start"
+            android:text=""
             android:textColor="#000000"
             android:fontFamily="serif-monospace"
+            android:textSize="18sp"
             android:autoSizeTextType="uniform" />
 
         <TextView
             android:id="@+id/colGFEst"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="30dp"
             android:layout_weight="1.25"
             android:gravity="center"
-            android:text="GF"
+            android:text=""
             android:textColor="#000000"
             android:fontFamily="serif-monospace"
-            android:textSize="18sp"
-            android:autoSizeTextType="uniform" />
+            android:textSize="16sp"
+            android:autoSizeMaxTextSize="18sp"
+            android:autoSizeMinTextSize="16sp"/>
 
         <TextView
             android:id="@+id/colGCEst"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="30dp"
             android:layout_weight="1.25"
             android:gravity="center"
-            android:text="GC"
+            android:text=""
             android:textColor="#000000"
             android:fontFamily="serif-monospace"
-            android:textSize="18sp"
-            android:autoSizeTextType="uniform"/>
+            android:textSize="16sp"
+            android:autoSizeMaxTextSize="18sp"
+            android:autoSizeMinTextSize="16sp"/>
 
         <TextView
             android:id="@+id/colPtsLEst"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="30dp"
             android:layout_weight="1.25"
             android:gravity="center"
-            android:text="PTSL"
+            android:text=""
             android:textColor="#000000"
             android:fontFamily="serif-monospace"
-            android:textSize="18sp"
+            android:textSize="15sp"
             android:autoSizeTextType="uniform"/>
 
         <TextView
             android:id="@+id/colPtsVEst"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="30dp"
             android:layout_weight="1.25"
             android:gravity="center"
-            android:text="PTSV"
+            android:text=""
             android:textColor="#000000"
             android:fontFamily="serif-monospace"
-            android:textSize="18sp"
+            android:textSize="15sp"
             android:autoSizeTextType="uniform"/>
     </TableRow>

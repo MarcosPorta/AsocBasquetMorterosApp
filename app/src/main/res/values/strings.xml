@@ -12,5 +12,10 @@
     <string name="porc_put_local">PTS L</string>
     <string name="porc_pts_vistante">PTS V</string>
     <string name="fecha_para_temp_regular">Fecha: %1$d</string>
+    <string name="pj">PJ</string>
+    <string name="pg">PG</string>
+    <string name="pp">PP</string>
+    <string name="puntos">PTS</string>
+    <string name="diferencia">DIF</string>
 
 </resources>

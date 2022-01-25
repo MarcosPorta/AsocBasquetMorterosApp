@@ -5,15 +5,23 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.AdView
+import com.google.android.gms.ads.MobileAds
 
 class MainActivity : AppCompatActivity() {
 
-    //var btnFixture:Button?=null
-    //var btnPosicione:Button?=null
+    lateinit var mAdView : AdView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        //Banner
+        MobileAds.initialize(this) {}
+        mAdView = findViewById(R.id.adView)
+        val adRequest = AdRequest.Builder().build()
+        mAdView.loadAd(adRequest)
 
         //Poner icono en el Action Bar
         supportActionBar?.setDisplayShowHomeEnabled(true)
@@ -39,6 +47,12 @@ class MainActivity : AppCompatActivity() {
         startActivity(intent)
         //toast
         Toast.makeText(this,"Estadisticas",Toast.LENGTH_LONG).show()
+    }
+    fun clickPrueba(view: View){
+        var intent= Intent(this,PruebaActivity::class.java)
+        startActivity(intent)
+        //toast
+        Toast.makeText(this,"Prueba",Toast.LENGTH_LONG).show()
     }
 
 }
