@@ -17,4 +17,5 @@
     <color name="divider">#BDBDBD</color>
 
     <color name="fondo">#01C617</color>
+    <color name="btn_presionado">#FF6D00</color>
 </resources>

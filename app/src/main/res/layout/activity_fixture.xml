@@ -47,32 +47,32 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="#FFC107"
                 android:fontFamily="serif-monospace"
+                android:gravity="center"
                 android:letterSpacing="0.05"
                 android:onClick="clickTablaTempRegular"
                 android:text="@string/temp_regular"
-                android:gravity="center"
                 android:textColor="#000000"
                 android:textSize="15dp"
                 android:textStyle="bold"
-                app:backgroundTint="#FFC107" />
+                app:backgroundTint="@null"
+                android:background="@drawable/style_btn_color" />
 
             <Button
                 android:id="@+id/btnPlayoffs"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="#FFC107"
                 android:fontFamily="serif-monospace"
+                android:gravity="center"
                 android:letterSpacing="0.05"
                 android:onClick="clickTablaPlayoffs"
                 android:text="@string/playoffs"
-                android:gravity="center"
                 android:textColor="#000000"
                 android:textSize="15dp"
                 android:textStyle="bold"
-                app:backgroundTint="#FFC107" />
+                app:backgroundTint="@null"
+                android:background="@drawable/style_btn_color" />
 
         </TableRow>
 

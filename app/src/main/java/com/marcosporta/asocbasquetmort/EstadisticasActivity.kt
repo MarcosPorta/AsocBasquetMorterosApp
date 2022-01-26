@@ -1,9 +1,11 @@
 package com.marcosporta.asocbasquetmort
 
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
+import android.widget.Button
 import android.widget.TableLayout
 import android.widget.TextView
 import android.widget.Toast
@@ -30,6 +32,9 @@ class EstadisticasActivity : AppCompatActivity() {
         llenarTablaEstadisticas("https://marcosporta.site/morterenseapp/estadisticasgf.php","Promedio de goles convertidos")
     }
     fun clickTablaGF(view: View){
+        /*val cambioColor : Button = findViewById(R.id.btnGF)
+        cambioColor.setOnClickListener { cambioColor.setBackgroundColor(12) }*/
+
         llenarTablaEstadisticas("https://marcosporta.site/morterenseapp/estadisticasgf.php","Promedio de goles convertidos")
     }
     fun clickTablaGC(view: View){
@@ -45,6 +50,7 @@ class EstadisticasActivity : AppCompatActivity() {
     //Funcion general, al pasarle una url y un texto te completa la tabla
     fun llenarTablaEstadisticas(url : String, textoToast : String){
         tbEstadisticas?.removeAllViews()
+
         val queue=Volley.newRequestQueue(this)
 
         Toast.makeText(this,textoToast,Toast.LENGTH_SHORT).show()

@@ -41,7 +41,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="2.8"
-            android:background="#FFC107"
+            android:background="@color/colorPrimary"
             android:fontFamily="serif-monospace"
             android:gravity="center"
             android:letterSpacing="0.2"
@@ -55,64 +55,64 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1.25"
-            android:background="#FFC107"
             android:fontFamily="serif-monospace"
+            android:gravity="center"
             android:letterSpacing="0.0000"
             android:onClick="clickTablaGF"
             android:text="@string/prom_goles_covertidos"
-            android:gravity="center"
             android:textColor="#000000"
             android:textSize="15dp"
             android:textStyle="bold"
-            app:backgroundTint="#FFC107" />
+            app:backgroundTint="@null"
+            android:background="@drawable/style_btn_color" />
 
         <Button
             android:id="@+id/btnGC"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1.25"
-            android:background="#FFC107"
             android:fontFamily="serif-monospace"
+            android:gravity="center"
             android:letterSpacing="0.0000"
             android:onClick="clickTablaGC"
             android:text="@string/prom_goles_concedidos"
-            android:gravity="center"
             android:textColor="#000000"
             android:textSize="15dp"
             android:textStyle="bold"
-            app:backgroundTint="#FFC107" />
+            app:backgroundTint="@null"
+            android:background="@drawable/style_btn_color" />
 
         <Button
             android:id="@+id/btnPTSL"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1.25"
-            android:background="#FFC107"
             android:fontFamily="serif-monospace"
+            android:gravity="center"
             android:letterSpacing="0.0000"
             android:onClick="clickTablaPTSL"
             android:text="@string/porc_put_local"
-            android:gravity="center"
             android:textColor="#000000"
             android:textSize="11dp"
             android:textStyle="bold"
-            app:backgroundTint="#FFC107" />
+            app:backgroundTint="@null"
+            android:background="@drawable/style_btn_color" />
 
         <Button
             android:id="@+id/btnPTSV"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1.25"
-            android:background="#FFC107"
             android:fontFamily="serif-monospace"
+            android:gravity="center"
             android:letterSpacing="0.0000"
             android:onClick="clickTablaPTSV"
             android:text="@string/porc_pts_vistante"
-            android:gravity="center"
             android:textColor="#000000"
             android:textSize="11dp"
             android:textStyle="bold"
-            app:backgroundTint="#FFC107" />
+            app:backgroundTint="@null"
+            android:background="@drawable/style_btn_color" />
 
     </TableRow>
 
