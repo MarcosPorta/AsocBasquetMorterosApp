@@ -30,10 +30,9 @@ class PosicionesActivity : AppCompatActivity() {
         mAdView.loadAd(adRequest)
 
 
-        //Poner icono en el Action Bar
-        supportActionBar?.setDisplayShowHomeEnabled(true)
-        supportActionBar?.setIcon(R.mipmap.ic_launcher)
+        //Poner boton regrasar y titulo en el Action Bar
         supportActionBar?.title = "A.B.M."
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         tbPosiciones=findViewById(R.id.tbPosiciones)
         tbPosiciones?.removeAllViews()

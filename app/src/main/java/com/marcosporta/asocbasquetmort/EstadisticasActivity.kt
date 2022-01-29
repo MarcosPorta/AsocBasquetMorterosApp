@@ -22,10 +22,9 @@ class EstadisticasActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_estadisticas)
 
-        //Poner icono y titulo en el Action Bar
-        supportActionBar?.setDisplayShowHomeEnabled(true)
-        supportActionBar?.setIcon(R.mipmap.ic_launcher)
+        //Poner boton regrasar y titulo en el Action Bar
         supportActionBar?.title = "A.B.M."
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         tbEstadisticas=findViewById(R.id.tbEstadisticas)
 

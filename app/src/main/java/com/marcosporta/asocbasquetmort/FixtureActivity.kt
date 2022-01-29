@@ -19,10 +19,9 @@ class FixtureActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_fixture)
 
-        //Poner icono en el Action Bar
-        supportActionBar?.setDisplayShowHomeEnabled(true)
-        supportActionBar?.setIcon(R.mipmap.ic_launcher)
-        supportActionBar?.title = ("A.B.M.")
+        //Poner boton regrasar y titulo en el Action Bar
+        supportActionBar?.title = "A.B.M."
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         tbFixture=findViewById(R.id.tbFixture)
 
