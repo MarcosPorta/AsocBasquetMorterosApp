@@ -17,5 +17,7 @@
     <string name="pp">PP</string>
     <string name="puntos">PTS</string>
     <string name="diferencia">DIF</string>
+    <string name="visitante">VISITANTE</string>
+    <string name="local">LOCAL</string>
 
 </resources>

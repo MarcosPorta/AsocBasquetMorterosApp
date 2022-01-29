@@ -21,6 +21,16 @@ class PruebaActivity : AppCompatActivity() {
         val adRequest = AdRequest.Builder().build()
         mAdView.loadAd(adRequest)
 
+        val cambioColor : Button = findViewById(R.id.buttonDePrueba)
+
+        cambioColor.setOnClickListener {
+            //Cambia el color del texto luego de hacer click
+            cambioColor.setTextColor(Color.parseColor("#FF6D00"))
+            //Cambia el color del boton luego de hacer click
+            cambioColor.setBackgroundColor(Color.parseColor("#000000"))
+        }
+
     }
 }
+
 
