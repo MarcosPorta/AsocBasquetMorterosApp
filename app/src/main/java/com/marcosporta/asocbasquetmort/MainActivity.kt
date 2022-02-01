@@ -41,11 +41,5 @@ class MainActivity : AppCompatActivity() {
         //toast
         Toast.makeText(this,"Estadisticas",Toast.LENGTH_LONG).show()
     }
-    fun clickPrueba(view: View){
-        var intent= Intent(this,PruebaActivity::class.java)
-        startActivity(intent)
-        //toast
-        Toast.makeText(this,"Prueba",Toast.LENGTH_LONG).show()
-    }
 
 }

@@ -22,9 +22,6 @@
             android:value="ca-app-pub-2807876859130041~4511872376" />
 
         <activity
-            android:name=".PruebaActivity"
-            android:exported="false" />
-        <activity
             android:name=".EstadisticasActivity"
             android:exported="true"
             android:screenOrientation="portrait"
