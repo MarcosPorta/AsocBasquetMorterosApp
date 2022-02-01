@@ -15,12 +15,6 @@ class PruebaActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_prueba)
 
-        //Banner
-        MobileAds.initialize(this) {}
-        mAdView = findViewById(R.id.adView)
-        val adRequest = AdRequest.Builder().build()
-        mAdView.loadAd(adRequest)
-
         val cambioColor : Button = findViewById(R.id.buttonDePrueba)
 
         cambioColor.setOnClickListener {

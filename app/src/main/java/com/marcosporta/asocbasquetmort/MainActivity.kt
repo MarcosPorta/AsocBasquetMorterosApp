@@ -8,17 +8,24 @@ import android.widget.Toast
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.AdView
 import com.google.android.gms.ads.MobileAds
+import com.google.android.gms.ads.RequestConfiguration
+import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
     lateinit var mAdView : AdView
+    val testId= Arrays.asList("572A1A67BA6623DBD9D945D4043174CB")
+    val configuracion=RequestConfiguration.Builder().setTestDeviceIds(testId).build()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        //Banner
+        MobileAds.setRequestConfiguration(configuracion)
+        RequestConfiguration.Builder().setTestDeviceIds(testId)
         MobileAds.initialize(this) {}
+
+        //Banner
         mAdView = findViewById(R.id.adView)
         val adRequest = AdRequest.Builder().build()
         mAdView.loadAd(adRequest)

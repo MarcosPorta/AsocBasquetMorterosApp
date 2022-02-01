@@ -1,19 +1,18 @@
-
-    apply plugin: 'com.android.application'
-    apply plugin: 'kotlin-android'
-    apply plugin: 'com.google.gms.google-services'
-
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+}
 
 android {
     compileSdk 31
 
     defaultConfig {
         applicationId "com.marcosporta.asocbasquetmort"
-        minSdk 16
-        multiDexEnabled true
+        minSdk 21
+        //multiDexEnabled true
         targetSdk 31
-        versionCode 2
-        versionName "1.1"
+        versionCode 1
+        versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
