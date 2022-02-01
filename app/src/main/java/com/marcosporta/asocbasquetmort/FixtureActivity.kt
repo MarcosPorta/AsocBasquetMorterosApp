@@ -9,9 +9,18 @@ import android.widget.*
 import com.android.volley.Request
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.AdView
+import com.google.android.gms.ads.MobileAds
+import com.google.android.gms.ads.RequestConfiguration
 import org.json.JSONException
+import java.util.*
 
 class FixtureActivity : AppCompatActivity() {
+
+    lateinit var mAdView : AdView
+    val testId= Arrays.asList("572A1A67BA6623DBD9D945D4043174CB")
+    val configuracion= RequestConfiguration.Builder().setTestDeviceIds(testId).build()
 
     var tbFixture:TableLayout?=null
 
@@ -19,7 +28,16 @@ class FixtureActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_fixture)
 
-        //Poner boton regrasar y titulo en el Action Bar
+        MobileAds.setRequestConfiguration(configuracion)
+        RequestConfiguration.Builder().setTestDeviceIds(testId)
+        MobileAds.initialize(this) {}
+
+        //Banner
+        mAdView = findViewById(R.id.bannerFixture)
+        val adRequest = AdRequest.Builder().build()
+        mAdView.loadAd(adRequest)
+
+        //Poner boton regresar y titulo en el Action Bar
         supportActionBar?.title = "A.B.M."
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 

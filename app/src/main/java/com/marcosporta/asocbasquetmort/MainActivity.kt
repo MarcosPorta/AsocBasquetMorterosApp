@@ -13,28 +13,14 @@ import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var mAdView : AdView
-    val testId= Arrays.asList("572A1A67BA6623DBD9D945D4043174CB")
-    val configuracion=RequestConfiguration.Builder().setTestDeviceIds(testId).build()
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        MobileAds.setRequestConfiguration(configuracion)
-        RequestConfiguration.Builder().setTestDeviceIds(testId)
-        MobileAds.initialize(this) {}
-
-        //Banner
-        mAdView = findViewById(R.id.adView)
-        val adRequest = AdRequest.Builder().build()
-        mAdView.loadAd(adRequest)
 
         //Poner icono en el Action Bar
         supportActionBar?.setDisplayShowHomeEnabled(true)
         supportActionBar?.setIcon(R.mipmap.ic_launcher)
         supportActionBar?.title = "A.B.M."
-
     }
 
     fun clickFixture(view: View){
