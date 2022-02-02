@@ -15,6 +15,7 @@
         android:gravity="start"
         android:textColor="#000000"
         android:fontFamily="serif-monospace"
+        android:textSize="18sp"
         android:autoSizeTextType="uniform" />
 
     <TextView
