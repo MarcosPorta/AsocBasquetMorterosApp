@@ -31,6 +31,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
+        android:padding="5sp"
         android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -39,10 +40,13 @@
 
         <Button
             android:id="@+id/btnTempRegular"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
+            android:background="@drawable/style_btn_color"
             android:fontFamily="serif-monospace"
+            android:paddingStart="5sp"
+            android:paddingEnd="5sp"
             android:gravity="center"
             android:letterSpacing="0.05"
             android:onClick="clickTablaTempRegular"
@@ -50,15 +54,16 @@
             android:textColor="#000000"
             android:textSize="15dp"
             android:textStyle="bold"
-            app:backgroundTint="@null"
-            android:background="@drawable/style_btn_color" />
+            app:backgroundTint="@null" />
 
         <Button
             android:id="@+id/btnPlayoffs"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:fontFamily="serif-monospace"
+            android:paddingStart="5sp"
+            android:paddingEnd="5sp"
             android:gravity="center"
             android:letterSpacing="0.05"
             android:onClick="clickTablaPlayoffs"

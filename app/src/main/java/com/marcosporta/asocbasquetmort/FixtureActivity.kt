@@ -128,14 +128,17 @@ class FixtureActivity : AppCompatActivity() {
                     for(i in 0 until jsonArray.length() ){
                         val jsonObject=jsonArray.getJSONObject(i)
 
+                        //Accediendo a un campo de la base de datos (fecha)
+                        val fechaBD = jsonObject.getInt("fecha")
+
                         //Imprime encabezados de las fechas.
-                        if(contador === i && fecha <= 14){
+                        if(fechaBD != contador){
                             val registro2 = LayoutInflater.from(this).inflate(R.layout.tabla_row_fecha, null, false)
                             val colNumeroFecha = registro2.findViewById<View>(R.id.colNumeroFecha) as TextView
                             colNumeroFecha.text = getString(R.string.fecha_para_temp_regular,fecha)
                             tbFixture?.addView(registro2)
                             fecha += 1
-                            contador += 3
+                            contador += 1
                         }
 
                         val registro=LayoutInflater.from(this).inflate(R.layout.tabla_row_fixture,null,false)
