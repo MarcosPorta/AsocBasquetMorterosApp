@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">A. B. M.</string>
+    <string name="app_name">A.B.M.</string>
     <string name="estadisticas">ESTADISTICAS</string>
     <string name="fixture">FIXTURE</string>
     <string name="posiciones">POSICIONES</string>
@@ -19,5 +19,6 @@
     <string name="diferencia">DIF</string>
     <string name="visitante">VISITANTE</string>
     <string name="local">LOCAL</string>
+    <string name="guion">-</string>
 
 </resources>
