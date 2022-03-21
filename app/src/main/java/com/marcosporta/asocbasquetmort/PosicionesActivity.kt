@@ -44,7 +44,7 @@ class PosicionesActivity : AppCompatActivity() {
         tbPosiciones=findViewById(R.id.tbPosiciones)
         tbPosiciones?.removeAllViews()
         val queue=Volley.newRequestQueue(this)
-        val url= "https://marcosporta.site/morterenseapp/registrosp.php"
+        val url= "https://marcosporta.site/morterenseapp/posiciones.php"
 
         //Creacion de json object request
         val jsonObjectRequest=JsonObjectRequest(Request.Method.GET,url,null,
