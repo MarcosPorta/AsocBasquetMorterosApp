@@ -34,16 +34,16 @@ class EstadisticasActivity : AppCompatActivity() {
         /*val cambioColor : Button = findViewById(R.id.btnGF)
         cambioColor.setOnClickListener { cambioColor.setBackgroundColor(12) }*/
 
-        llenarTablaEstadisticas("https://marcosporta.site/morterenseapp/estadisticasgf2.php","Promedio de goles convertidos")
+        llenarTablaEstadisticas("https://marcosporta.site/morterenseapp/estadisticasgf.php","Promedio de goles convertidos")
     }
     fun clickTablaGC(view: View){
-        llenarTablaEstadisticas("https://marcosporta.site/morterenseapp/estadisticasgc2.php","Promedio de goles concedidos")
+        llenarTablaEstadisticas("https://marcosporta.site/morterenseapp/estadisticasgc.php","Promedio de goles concedidos")
     }
     fun clickTablaPTSL(view: View){
-        llenarTablaEstadisticas("https://marcosporta.site/morterenseapp/estadisticasptsl2.php","Puntos obtenidos de local")
+        llenarTablaEstadisticas("https://marcosporta.site/morterenseapp/estadisticasptsl.php","Puntos obtenidos de local")
     }
     fun clickTablaPTSV(view: View){
-        llenarTablaEstadisticas("https://marcosporta.site/morterenseapp/estadisticasptsv2.php","Puntos obtenidos de visitante")
+        llenarTablaEstadisticas("https://marcosporta.site/morterenseapp/estadisticasptsv.php","Puntos obtenidos de visitante")
     }
 
     //Funcion general, al pasarle una url y un texto te completa la tabla
