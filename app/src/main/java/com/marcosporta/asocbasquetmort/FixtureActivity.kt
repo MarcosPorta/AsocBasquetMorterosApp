@@ -122,6 +122,7 @@ class FixtureActivity : AppCompatActivity() {
                     val jsonArray=response.getJSONArray("data")
                     var contador = 0
                     var fecha = 1
+                    var hora = ""
                     for(i in 0 until jsonArray.length() ){
                         val jsonObject=jsonArray.getJSONObject(i)
 
@@ -129,7 +130,7 @@ class FixtureActivity : AppCompatActivity() {
                         val fechaBD = jsonObject.getInt("fecha")
                         val horaBD = jsonObject.getString("diahora")
                         var ptslocal = jsonObject.getString("ptsl")
-                        println("MIRAR ACA ------------> $fechaBD y $ $fecha // $horaBD // $ptslocal")
+                        //println("MIRAR ACA ------------> $fechaBD y $ $fecha // $horaBD // $ptslocal")
                         //Imprime encabezados de las fechas.
                         if(fechaBD != contador){
                             val registro2 = LayoutInflater.from(this).inflate(R.layout.tabla_row_fecha, null, false)
@@ -142,15 +143,17 @@ class FixtureActivity : AppCompatActivity() {
                             contador += 1
                         }
                         //Imprime la fecha calendario
-                        if(horaBD != "null"){
+                        if(horaBD != "null" && horaBD != hora ){
                             val registro3=LayoutInflater.from(this).inflate(R.layout.tabla_row_calendario,null,false)
                             val filaCalendario=registro3.findViewById<View>(R.id.filaCalendario) as TextView
                             //val colEquipoV=registro.findViewById<View>(R.id.colEquipoV) as TextView
                             //val colHora = registro.findViewById<View>(R.id.colPtsL) as TextView
                             filaCalendario.text=jsonObject.getString("diahora")
+                            println("MIRAR ACA ------------> $fechaBD y $ $fecha // $horaBD y $hora")
                             //colHora.text=jsonObject.getString("diahora")
                             //colEquipoV.text=jsonObject.getString("equipov")
                             tbFixture?.addView(registro3)
+                            hora = horaBD
                         }
                         val registro=LayoutInflater.from(this).inflate(R.layout.tabla_row_fixture,null,false)
                         val colEquipoL=registro.findViewById<View>(R.id.colEquipoL) as TextView
