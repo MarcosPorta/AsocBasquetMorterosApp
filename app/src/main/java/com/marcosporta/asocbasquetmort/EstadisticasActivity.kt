@@ -5,10 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
-import android.widget.Button
-import android.widget.TableLayout
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import com.android.volley.Request
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
@@ -17,6 +14,7 @@ import org.json.JSONException
 class EstadisticasActivity : AppCompatActivity() {
 
     var tbEstadisticas:TableLayout?=null
+    lateinit var spinnerEquipos:Spinner
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,6 +25,29 @@ class EstadisticasActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         tbEstadisticas=findViewById(R.id.tbEstadisticas)
+
+        //SPINNERS
+        //Zonas
+        spinnerEquipos = findViewById(R.id.sp_estadisticas)
+        val listaEquipos = resources.getStringArray(R.array.equipos)
+
+        val adaptadorEst = ArrayAdapter(this,android.R.layout.simple_spinner_dropdown_item,listaEquipos)
+        spinnerEquipos.adapter = adaptadorEst
+
+        spinnerEquipos.onItemSelectedListener = object:
+            AdapterView.OnItemSelectedListener{
+            //Cuando tengo un elemento seleccionado.
+            override fun onItemSelected(parent: AdapterView<*>, view: View?, pos: Int, id: Long) {
+                //println("MIRAR ACA -------->>> ${spinnerZona.selectedItem}")
+                //zonaSeleccionada = spinnerZona.selectedItem.toString()
+
+                //Funcionalidad para realizar las consultas.
+                //consultaPartidos(zonaSeleccionada,categoriaSeleccionada,torneoSeleccionado)
+            }
+            //Cuando NO tengo un elemento seleccionado.
+            override fun onNothingSelected(parent: AdapterView<*>) {
+            }
+        }
 
         llenarTablaEstadisticas("https://marcosporta.site/morterenseapp/estadisticasgf.php","Promedio de goles convertidos")
     }

@@ -21,4 +21,16 @@
     <string name="local">LOCAL</string>
     <string name="guion">-</string>
 
+    <string-array name="equipos">
+        <item>Elegir equipo</item>
+        <item>9 de Julio (F)</item>
+        <item>9 de Julio (M)</item>
+        <item>Centro Soc. (B)</item>
+        <item>Porteña Asoc.</item>
+        <item>San Jorge (B)</item>
+        <item>Sportivo (S)</item>
+        <item>Tiro Federal</item>
+        <item>Union (SG)</item>
+    </string-array>
+
 </resources>
