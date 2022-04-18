@@ -14,8 +14,8 @@ import org.json.JSONException
 class EstadisticasActivity : AppCompatActivity() {
 
     var tbEstadisticas:TableLayout?=null
-    lateinit var spinnerEquipos:Spinner
-
+    lateinit var spinnerEstadisticas:Spinner
+    var seleccion:String = ""
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_estadisticas)
@@ -28,43 +28,35 @@ class EstadisticasActivity : AppCompatActivity() {
 
         //SPINNERS
         //Zonas
-        spinnerEquipos = findViewById(R.id.sp_estadisticas)
+        spinnerEstadisticas = findViewById(R.id.sp_estadisticas)
         val listaEquipos = resources.getStringArray(R.array.equipos)
 
         val adaptadorEst = ArrayAdapter(this,android.R.layout.simple_spinner_dropdown_item,listaEquipos)
-        spinnerEquipos.adapter = adaptadorEst
+        spinnerEstadisticas.adapter = adaptadorEst
 
-        spinnerEquipos.onItemSelectedListener = object:
+        spinnerEstadisticas.onItemSelectedListener = object:
             AdapterView.OnItemSelectedListener{
             //Cuando tengo un elemento seleccionado.
             override fun onItemSelected(parent: AdapterView<*>, view: View?, pos: Int, id: Long) {
-                //println("MIRAR ACA -------->>> ${spinnerZona.selectedItem}")
-                //zonaSeleccionada = spinnerZona.selectedItem.toString()
-
-                //Funcionalidad para realizar las consultas.
-                //consultaPartidos(zonaSeleccionada,categoriaSeleccionada,torneoSeleccionado)
+                println("MIRAR ACA -------->>> ${spinnerEstadisticas.selectedItemPosition}")
+                seleccion = spinnerEstadisticas.selectedItem.toString()
+                if(spinnerEstadisticas.selectedItemPosition == 0){
+                    llenarTablaEstadisticas("https://marcosporta.site/morterenseapp/estadisticasgf.php","Promedio de goles convertidos")
+                }
+                else if(spinnerEstadisticas.selectedItemPosition == 1){
+                    llenarTablaEstadisticas("https://marcosporta.site/morterenseapp/estadisticasgc.php","Promedio de goles concedidos")
+                }
+                else if(spinnerEstadisticas.selectedItemPosition == 2){
+                    llenarTablaEstadisticas("https://marcosporta.site/morterenseapp/estadisticasptsl.php","Puntos obtenidos de local")
+                }
+                else{
+                    llenarTablaEstadisticas("https://marcosporta.site/morterenseapp/estadisticasptsv.php","Puntos obtenidos de visitante")
+                }
             }
             //Cuando NO tengo un elemento seleccionado.
             override fun onNothingSelected(parent: AdapterView<*>) {
             }
         }
-
-        llenarTablaEstadisticas("https://marcosporta.site/morterenseapp/estadisticasgf.php","Promedio de goles convertidos")
-    }
-    fun clickTablaGF(view: View){
-        /*val cambioColor : Button = findViewById(R.id.btnGF)
-        cambioColor.setOnClickListener { cambioColor.setBackgroundColor(12) }*/
-
-        llenarTablaEstadisticas("https://marcosporta.site/morterenseapp/estadisticasgf.php","Promedio de goles convertidos")
-    }
-    fun clickTablaGC(view: View){
-        llenarTablaEstadisticas("https://marcosporta.site/morterenseapp/estadisticasgc.php","Promedio de goles concedidos")
-    }
-    fun clickTablaPTSL(view: View){
-        llenarTablaEstadisticas("https://marcosporta.site/morterenseapp/estadisticasptsl.php","Puntos obtenidos de local")
-    }
-    fun clickTablaPTSV(view: View){
-        llenarTablaEstadisticas("https://marcosporta.site/morterenseapp/estadisticasptsv.php","Puntos obtenidos de visitante")
     }
 
     //Funcion general, al pasarle una url y un texto te completa la tabla

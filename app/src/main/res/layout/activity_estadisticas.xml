@@ -140,6 +140,6 @@
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/filaEncabezadoEst">
+        app:layout_constraintTop_toBottomOf="@+id/sp_estadisticas">
     </TableLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
