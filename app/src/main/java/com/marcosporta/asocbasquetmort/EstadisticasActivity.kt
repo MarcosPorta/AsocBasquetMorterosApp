@@ -1,6 +1,5 @@
 package com.marcosporta.asocbasquetmort
 
-import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -38,7 +37,7 @@ class EstadisticasActivity : AppCompatActivity() {
             AdapterView.OnItemSelectedListener{
             //Cuando tengo un elemento seleccionado.
             override fun onItemSelected(parent: AdapterView<*>, view: View?, pos: Int, id: Long) {
-                println("MIRAR ACA -------->>> ${spinnerEstadisticas.selectedItemPosition}")
+                //println("MIRAR ACA -------->>> ${spinnerEstadisticas.selectedItemPosition}")
                 seleccion = spinnerEstadisticas.selectedItem.toString()
                 when (spinnerEstadisticas.selectedItemPosition) {
                     0 -> llenarTablaEstadisticas("https://marcosporta.site/morterenseapp/estadisticasgf.php","Promedio de goles convertidos")
