@@ -40,17 +40,13 @@ class EstadisticasActivity : AppCompatActivity() {
             override fun onItemSelected(parent: AdapterView<*>, view: View?, pos: Int, id: Long) {
                 println("MIRAR ACA -------->>> ${spinnerEstadisticas.selectedItemPosition}")
                 seleccion = spinnerEstadisticas.selectedItem.toString()
-                if(spinnerEstadisticas.selectedItemPosition == 0){
-                    llenarTablaEstadisticas("https://marcosporta.site/morterenseapp/estadisticasgf.php","Promedio de goles convertidos")
-                }
-                else if(spinnerEstadisticas.selectedItemPosition == 1){
-                    llenarTablaEstadisticas("https://marcosporta.site/morterenseapp/estadisticasgc.php","Promedio de goles concedidos")
-                }
-                else if(spinnerEstadisticas.selectedItemPosition == 2){
-                    llenarTablaEstadisticas("https://marcosporta.site/morterenseapp/estadisticasptsl.php","Puntos obtenidos de local")
-                }
-                else{
-                    llenarTablaEstadisticas("https://marcosporta.site/morterenseapp/estadisticasptsv.php","Puntos obtenidos de visitante")
+                when (spinnerEstadisticas.selectedItemPosition) {
+                    0 -> llenarTablaEstadisticas("https://marcosporta.site/morterenseapp/estadisticasgf.php","Promedio de goles convertidos")
+                    1 -> llenarTablaEstadisticas("https://marcosporta.site/morterenseapp/estadisticasgc.php","Promedio de goles concedidos")
+                    2 -> llenarTablaEstadisticas("https://marcosporta.site/morterenseapp/estadisticasptsl.php","Puntos obtenidos de local")
+                    else -> {
+                        llenarTablaEstadisticas("https://marcosporta.site/morterenseapp/estadisticasptsv.php","Puntos obtenidos de visitante")
+                    }
                 }
             }
             //Cuando NO tengo un elemento seleccionado.
