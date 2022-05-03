@@ -24,8 +24,8 @@
     <string-array name="equipos">
         <item>Promedio de GF</item>
         <item>Promedio de GC</item>
-        <item>% de Pts de local</item>
-        <item>% de Pts de visitante</item>
+        <item>Pts de local</item>
+        <item>Pts de visitante</item>
     </string-array>
 
 </resources>

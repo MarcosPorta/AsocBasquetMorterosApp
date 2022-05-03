@@ -129,29 +129,24 @@ class FixtureActivity : AppCompatActivity() {
                         //Accediendo a un campo de la base de datos (fecha)
                         val fechaBD = jsonObject.getInt("fecha")
                         val horaBD = jsonObject.getString("diahora")
-                        var ptslocal = jsonObject.getString("ptsl")
+                        var ptslocalBD = jsonObject.getString("ptsl")
                         //println("MIRAR ACA ------------> $fechaBD y $ $fecha // $horaBD // $ptslocal")
+                        println("Mirar $ptslocalBD")
                         //Imprime encabezados de las fechas.
                         if(fechaBD != contador){
                             val registro2 = LayoutInflater.from(this).inflate(R.layout.tabla_row_fecha, null, false)
                             val colNumeroFecha = registro2.findViewById<View>(R.id.colNumeroFecha) as TextView
-                            //val colHora = registro2.findViewById<View>(R.id.colFechaCalendario) as TextView
                             colNumeroFecha.text = getString(R.string.fecha_para_temp_regular,fecha)
-                            //colHora.text = jsonObject.getString("diahora")
                             tbFixture?.addView(registro2)
                             fecha += 1
                             contador += 1
                         }
                         //Imprime la fecha calendario
-                        if(horaBD != "null" && horaBD != hora ){
+                        if(horaBD != "" && horaBD != hora && ptslocalBD == " "){
                             val registro3=LayoutInflater.from(this).inflate(R.layout.tabla_row_calendario,null,false)
                             val filaCalendario=registro3.findViewById<View>(R.id.filaCalendario) as TextView
-                            //val colEquipoV=registro.findViewById<View>(R.id.colEquipoV) as TextView
-                            //val colHora = registro.findViewById<View>(R.id.colPtsL) as TextView
                             filaCalendario.text=jsonObject.getString("diahora")
-                            println("MIRAR ACA ------------> $fechaBD y $ $fecha // $horaBD y $hora")
-                            //colHora.text=jsonObject.getString("diahora")
-                            //colEquipoV.text=jsonObject.getString("equipov")
+                            println("MIRAR ACA ------------> $ptslocalBD // $horaBD y $hora")
                             tbFixture?.addView(registro3)
                             hora = horaBD
                         }

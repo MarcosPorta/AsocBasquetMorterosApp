@@ -40,11 +40,11 @@ class EstadisticasActivity : AppCompatActivity() {
                 //println("MIRAR ACA -------->>> ${spinnerEstadisticas.selectedItemPosition}")
                 seleccion = spinnerEstadisticas.selectedItem.toString()
                 when (spinnerEstadisticas.selectedItemPosition) {
-                    0 -> llenarTablaEstadisticas("https://marcosporta.site/morterenseapp/estadisticasgf.php","Promedio de goles convertidos")
-                    1 -> llenarTablaEstadisticas("https://marcosporta.site/morterenseapp/estadisticasgc.php","Promedio de goles concedidos")
-                    2 -> llenarTablaEstadisticas("https://marcosporta.site/morterenseapp/estadisticasptsl.php","Puntos obtenidos de local")
+                    0 -> llenarTablaEstadisticas("https://marcosporta.site/morterenseapp/estadisticasgf2.php","Promedio de goles convertidos")
+                    1 -> llenarTablaEstadisticas("https://marcosporta.site/morterenseapp/estadisticasgc2.php","Promedio de goles concedidos")
+                    2 -> llenarTablaEstadisticas("https://marcosporta.site/morterenseapp/estadisticasptsl2.php","Puntos obtenidos de local")
                     else -> {
-                        llenarTablaEstadisticas("https://marcosporta.site/morterenseapp/estadisticasptsv.php","Puntos obtenidos de visitante")
+                        llenarTablaEstadisticas("https://marcosporta.site/morterenseapp/estadisticasptsv2.php","Puntos obtenidos de visitante")
                     }
                 }
             }
@@ -69,15 +69,9 @@ class EstadisticasActivity : AppCompatActivity() {
                         val jsonObject=jsonArray.getJSONObject(i)
                         val registro=LayoutInflater.from(this).inflate(R.layout.tabla_row_estadisticas,null,false)
                         val colEquipoEst=registro.findViewById<View>(R.id.colEquipoEst) as TextView
-                        val colGFEst=registro.findViewById<View>(R.id.colGFEst) as TextView
-                        val colGCEst=registro.findViewById<View>(R.id.colGCEst) as TextView
-                        val colPtsLEst=registro.findViewById<View>(R.id.colPtsLEst) as TextView
-                        val colPtsVEst=registro.findViewById<View>(R.id.colPtsVEst) as TextView
+                        val colEst=registro.findViewById<View>(R.id.colEstadistica) as TextView
                         colEquipoEst.text=jsonObject.getString("equipo")
-                        colGFEst.text=jsonObject.getString("gf")
-                        colGCEst.text=jsonObject.getString("gc")
-                        colPtsLEst.text=jsonObject.getString("ptsl")
-                        colPtsVEst.text=jsonObject.getString("ptsv")
+                        colEst.text=jsonObject.getString("result")
                         tbEstadisticas?.addView(registro)
                     }
                 }catch (e: JSONException){
