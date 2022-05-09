@@ -27,6 +27,7 @@
 
     <Spinner
         android:id="@+id/sp_estadisticas"
+        android:background="@drawable/style_spinner"
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:layout_margin="5dp"
@@ -42,6 +43,7 @@
         android:id="@+id/tbEstadisticas"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sp_estadisticas">
