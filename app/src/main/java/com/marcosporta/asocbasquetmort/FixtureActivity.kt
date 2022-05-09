@@ -129,7 +129,7 @@ class FixtureActivity : AppCompatActivity() {
                         //Accediendo a un campo de la base de datos (fecha)
                         val fechaBD = jsonObject.getInt("fecha")
                         val horaBD = jsonObject.getString("diahora")
-                        var ptslocalBD = jsonObject.getString("ptsl")
+                        val ptslocalBD = jsonObject.getString("ptsl")
                         //println("MIRAR ACA ------------> $fechaBD y $ $fecha // $horaBD // $ptslocal")
                         println("Mirar $ptslocalBD")
                         //Imprime encabezados de las fechas.
