@@ -30,7 +30,7 @@ class EstadisticasActivity : AppCompatActivity() {
         spinnerEstadisticas = findViewById(R.id.sp_estadisticas)
         val listaEquipos = resources.getStringArray(R.array.equipos)
 
-        val adaptadorEst = ArrayAdapter(this,android.R.layout.simple_spinner_dropdown_item,listaEquipos)
+        val adaptadorEst = ArrayAdapter(this,R.layout.style_spinner,listaEquipos)
         spinnerEstadisticas.adapter = adaptadorEst
 
         spinnerEstadisticas.onItemSelectedListener = object:
