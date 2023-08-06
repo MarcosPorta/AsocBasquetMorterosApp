@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableRow
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center">
+
+    <TextView
+        android:id="@+id/filaCalendario"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:text=""
+        android:gravity="center"
+        android:paddingRight="5sp"
+        android:paddingLeft="0sp"
+        android:background="#FFC107"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:fontFamily="serif-monospace"
+        android:textSize="15dp" />
+
+</TableRow>

@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">A.B.M.</string>
+    <string name="estadisticas">ESTADISTICAS</string>
+    <string name="fixture">FIXTURE</string>
+    <string name="posiciones">POSICIONES</string>
+    <string name="fecha">Fecha</string>
+    <string name="temp_regular">Regular</string>
+    <string name="playoffs">Playoffs</string>
+    <string name="prom_goles_covertidos">GF</string>
+    <string name="prom_goles_concedidos">GC</string>
+    <string name="equipo">EQUIPO</string>
+    <string name="porc_put_local">PTS L</string>
+    <string name="porc_pts_vistante">PTS V</string>
+    <string name="fecha_para_temp_regular">Fecha %1$d</string>
+    <string name="pj">PJ</string>
+    <string name="pg">PG</string>
+    <string name="pp">PP</string>
+    <string name="puntos">PTS</string>
+    <string name="diferencia">DIF</string>
+    <string name="visitante">VISITANTE</string>
+    <string name="local">LOCAL</string>
+    <string name="guion">-</string>
+
+    <string-array name="equipos">
+        <item>Promedio de GF</item>
+        <item>Promedio de GC</item>
+        <item>Pts de local</item>
+        <item>Pts de visitante</item>
+    </string-array>
+
+</resources>

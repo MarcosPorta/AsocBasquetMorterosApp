@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableRow xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:background="@drawable/style_borde_text">
+
+    <ImageView
+        android:id="@+id/imageEscudo"
+        android:contentDescription="@string/app_name"
+        android:layout_width="0dp"
+        android:layout_height="20dp"
+        android:layout_weight="0.8"
+        app:srcCompat="@drawable/ligamorterensebasquet"/>
+
+    <TextView
+        android:id="@+id/colEquipo"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:layout_weight="2"
+        android:text=""
+        android:layout_gravity="start"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:textSize="14sp"
+        android:fontFamily="serif" />
+
+    <TextView
+        android:id="@+id/colPj"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:layout_weight="1"
+        android:text=""
+        android:textColor="#000000"
+        android:fontFamily="serif"
+        android:textSize="16sp"
+        android:gravity="center"/>
+
+    <TextView
+        android:id="@+id/colPg"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:layout_weight="1"
+        android:text=""
+        android:textColor="#000000"
+        android:fontFamily="serif"
+        android:textSize="16sp"
+        android:gravity="center"/>
+
+    <TextView
+        android:id="@+id/colPp"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:layout_weight="1"
+        android:text=""
+        android:textColor="#000000"
+        android:fontFamily="serif"
+        android:textSize="16sp"
+        android:gravity="center"/>
+
+    <TextView
+        android:id="@+id/colPts"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:layout_weight="1"
+        android:text=""
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:fontFamily="serif"
+        android:textSize="16sp"
+        android:gravity="center"/>
+
+    <TextView
+        android:id="@+id/colDif"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:layout_weight="1"
+        android:text=""
+        android:textColor="#000000"
+        android:fontFamily="serif"
+        android:textSize="16sp"
+        android:gravity="center"/>
+</TableRow>

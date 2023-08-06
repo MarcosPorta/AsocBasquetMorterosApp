@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fondo"
+    tools:context=".FixtureActivity">
+
+    <!-- Encabezado -->
+    <TextView
+        android:id="@+id/tituloFixture"
+        android:layout_width="match_parent"
+        android:layout_height="25sp"
+        android:layout_marginTop="16dp"
+        android:text="@string/fixture"
+        android:gravity="center"
+        android:background="#FFC107"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:fontFamily="serif-monospace"
+        android:textSize="20sp"
+        android:letterSpacing="0.2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Botones de Temp regular y playoffs -->
+    <TableRow
+        android:id="@+id/sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5sp"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tituloFixture"
+        android:background="@drawable/style_borde_btn">
+
+        <Button
+            android:id="@+id/btnTempRegular"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/style_btn_color"
+            android:fontFamily="serif-monospace"
+            android:layout_margin="2dp"
+            android:gravity="center"
+            android:letterSpacing="0.05"
+            android:onClick="clickTablaTempRegular"
+            android:text="@string/temp_regular"
+            android:textColor="#000000"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            app:backgroundTint="@null" />
+
+        <Button
+            android:id="@+id/btnPlayoffs"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:fontFamily="serif-monospace"
+            android:layout_margin="2dp"
+            android:gravity="center"
+            android:letterSpacing="0.05"
+            android:onClick="clickTablaPlayoffs"
+            android:text="@string/playoffs"
+            android:textColor="#000000"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            app:backgroundTint="@null"
+            android:background="@drawable/style_btn_color" />
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/filaEncabezadoFix"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sp">
+
+        <!-- Titulos columnas -->
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:background="#FFC107"
+            android:fontFamily="serif-monospace"
+            android:gravity="center"
+            android:letterSpacing="0.05"
+            android:text="@string/local"
+            android:textColor="#000000"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.9"
+            android:background="#FFC107"
+            android:fontFamily="serif-monospace"
+            android:gravity="center"
+            android:letterSpacing="0.05"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:background="#FFC107"
+            android:fontFamily="serif-monospace"
+            android:gravity="center"
+            android:letterSpacing="0.05"
+            android:text="@string/visitante"
+            android:textColor="#000000"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+    </TableRow>
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/bannerFixture"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/filaEncabezadoFix">
+
+        <TableLayout
+            android:id="@+id/tbFixture"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@+id/bannerFixture"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/filaEncabezadoFix" />
+    </ScrollView>
+
+    <!-- De prueba:  ca-app-pub-3940256099942544/6300978111  -->
+    <!-- De la App:  ca-app-pub-2807876859130041/9931736890  -->
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/bannerFixture"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        app:adSize="BANNER"
+        app:adUnitId="ca-app-pub-3940256099942544/6300978111"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

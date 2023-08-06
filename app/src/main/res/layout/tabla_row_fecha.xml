@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableRow
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center">
+
+    <TextView
+        android:id="@+id/colNumeroFecha"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="2"
+        android:text="@string/fecha"
+        android:gravity="start"
+        android:paddingLeft="5sp"
+        android:paddingRight="0sp"
+        android:background="#FFC107"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:fontFamily="serif-monospace"
+        android:textSize="20dp" />
+
+</TableRow>
