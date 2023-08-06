@@ -10,10 +10,10 @@
     <Button
 
         android:id="@+id/btnFixture"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="25sp"
         android:layout_marginEnd="8dp"
         android:padding="10sp"
         android:text="@string/fixture"
@@ -21,15 +21,16 @@
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageInicial" />
+        app:layout_constraintTop_toBottomOf="@+id/imageInicial"
+        app:layout_constraintHorizontal_bias="0.5" />
 
     <Button
 
         android:id="@+id/btnPosiciones"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="10sp"
         android:layout_marginEnd="8dp"
         android:text="@string/posiciones"
         android:padding="10sp"
@@ -37,15 +38,16 @@
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnFixture" />
+        app:layout_constraintTop_toBottomOf="@+id/btnFixture"
+        app:layout_constraintHorizontal_bias="0.5" />
 
     <Button
 
         android:id="@+id/btnEstadisticas"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="10sp"
         android:layout_marginEnd="8dp"
         android:text="@string/estadisticas"
         android:padding="10sp"
@@ -53,18 +55,19 @@
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnPosiciones" />
+        app:layout_constraintTop_toBottomOf="@+id/btnPosiciones"
+        app:layout_constraintHorizontal_bias="0.5" />
 
     <ImageView
         android:id="@+id/imageInicial"
         android:contentDescription="@string/app_name"
-        android:layout_width="380dp"
-        android:layout_height="250dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_marginTop="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.516"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintDimensionRatio="H,3:2"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/ligamorterensebasquet" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
