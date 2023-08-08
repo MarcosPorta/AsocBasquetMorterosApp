@@ -5,7 +5,6 @@ import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
-import android.graphics.drawable.Drawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -36,8 +35,6 @@ class PosicionesActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_posiciones)
-        //Para acceder a los escudos
-        val assetManager = applicationContext.assets
 
         MobileAds.setRequestConfiguration(configuracion)
         RequestConfiguration.Builder().setTestDeviceIds(testId)
