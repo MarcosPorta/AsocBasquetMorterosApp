@@ -20,6 +20,7 @@ import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.AdView
 import com.google.android.gms.ads.MobileAds
 import com.google.android.gms.ads.RequestConfiguration
+import com.marcosporta.asocbasquetmort.EquipoImagenes.equipoImagenMap
 import org.json.JSONException
 import java.io.IOException
 import java.io.InputStream
@@ -49,19 +50,6 @@ class PosicionesActivity : AppCompatActivity() {
         supportActionBar?.title = "A.B.M."
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar!!.setBackgroundDrawable(ColorDrawable(Color.parseColor("#FFA000")))
-
-        val equipoImagenMap = mapOf(
-            "Tiro Federal" to "tiro.png",
-            "Sportivo (S)" to "sportivo.png",
-            "Union (SG)" to "union.png",
-            "9 de Julio (M)" to "nuevemorteros.png",
-            "9 de Julio (F)" to "nuevefreyre.png",
-            "Porteña Asoc." to "portena.png",
-            "San Jorge (B)" to "sanjorge.png",
-            "Centro Soc. (B)" to "centro.png",
-            "Libertad (VT)" to "villa.png",
-
-        )
 
         tbPosiciones=findViewById(R.id.tbPosiciones)
         tbPosiciones?.removeAllViews()
