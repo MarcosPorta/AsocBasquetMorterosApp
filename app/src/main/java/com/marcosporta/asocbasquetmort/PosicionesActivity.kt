@@ -96,6 +96,36 @@ class PosicionesActivity : AppCompatActivity() {
             }
         )
         queue.add(jsonObjectRequest)
+
+        //Funcion para mostrar sancion
+        mostrarSancion()
+    }
+
+    private fun mostrarSancion() {
+        val queueSancion=Volley.newRequestQueue(this)
+        val urlSancion= "https://marcosporta.site/morterenseapp/sancion.php"
+
+        //Creacion de json object request
+        val jsonObjectRequest=JsonObjectRequest(Request.Method.GET,urlSancion,null,
+            {response ->
+                try {
+
+                    val valorSancion = response.getInt("valores")
+                    println("MIRAR ACA---> $valorSancion")
+                    if(valorSancion == 1){
+                        val registroSancion = LayoutInflater.from(this).inflate(R.layout.text_sancion,null,false)
+                        val textoSancion=registroSancion.findViewById<View>(R.id.texto_sancion) as TextView
+                        textoSancion.text=response.getString("descripcion")
+                        tbPosiciones?.addView(registroSancion)
+                    }
+                }catch (e: JSONException){
+                    e.printStackTrace()
+                }
+            }, { error ->
+                Toast.makeText(this,"Error $error ",Toast.LENGTH_LONG).show()
+            }
+        )
+        queueSancion.add(jsonObjectRequest)
     }
 
     fun getBitmapFromAssets(context: Context, fileName: String): Bitmap? {

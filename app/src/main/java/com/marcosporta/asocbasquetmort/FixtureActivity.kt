@@ -173,7 +173,6 @@ class FixtureActivity : AppCompatActivity() {
                             val registro3=LayoutInflater.from(this).inflate(R.layout.tabla_row_calendario,null,false)
                             val filaCalendario=registro3.findViewById<View>(R.id.filaCalendario) as TextView
                             filaCalendario.text=jsonObject.getString("diahora")
-                            println("MIRAR ACA ------------> $ptslocalBD // $horaBD y $hora")
                             tbFixture?.addView(registro3)
                             hora = horaBD
                         }
