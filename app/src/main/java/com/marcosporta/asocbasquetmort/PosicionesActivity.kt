@@ -87,6 +87,10 @@ class PosicionesActivity : AppCompatActivity() {
                         }
 
                         tbPosiciones?.addView(registro)
+                        //Funcion para mostrar sancion
+                        if(i==jsonArray.length()-1) {
+                            mostrarSancion()
+                        }
                     }
                 }catch (e: JSONException){
                     e.printStackTrace()
@@ -97,8 +101,6 @@ class PosicionesActivity : AppCompatActivity() {
         )
         queue.add(jsonObjectRequest)
 
-        //Funcion para mostrar sancion
-        mostrarSancion()
     }
 
     private fun mostrarSancion() {
@@ -138,5 +140,4 @@ class PosicionesActivity : AppCompatActivity() {
         }
         return null
     }
-
 }
