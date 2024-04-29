@@ -113,7 +113,7 @@ class PosicionesActivity : AppCompatActivity() {
                 try {
 
                     val valorSancion = response.getInt("valores")
-                    println("MIRAR ACA---> $valorSancion")
+                    //println("MIRAR ACA---> $valorSancion")
                     if(valorSancion == 1){
                         val registroSancion = LayoutInflater.from(this).inflate(R.layout.text_sancion,null,false)
                         val textoSancion=registroSancion.findViewById<View>(R.id.texto_sancion) as TextView
