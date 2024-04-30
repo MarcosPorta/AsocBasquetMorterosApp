@@ -10,9 +10,18 @@ import android.widget.*
 import com.android.volley.Request
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.AdView
+import com.google.android.gms.ads.MobileAds
+import com.google.android.gms.ads.RequestConfiguration
 import org.json.JSONException
+import java.util.Arrays
 
 class EstadisticasActivity : AppCompatActivity() {
+
+    lateinit var mAdView : AdView
+    val testId= Arrays.asList("572A1A67BA6623DBD9D945D4043174CB")
+    val configuracion= RequestConfiguration.Builder().setTestDeviceIds(testId).build()
 
     var tbEstadisticas:TableLayout?=null
     lateinit var spinnerEstadisticas:Spinner
@@ -20,6 +29,15 @@ class EstadisticasActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_estadisticas)
+
+        MobileAds.setRequestConfiguration(configuracion)
+        RequestConfiguration.Builder().setTestDeviceIds(testId)
+        MobileAds.initialize(this) {}
+
+        //Banner
+        mAdView = findViewById(R.id.bannerEstadisticas)
+        val adRequest = AdRequest.Builder().build()
+        mAdView.loadAd(adRequest)
 
         //Poner boton regrasar y titulo en el Action Bar
         supportActionBar?.title = "A.B.M."

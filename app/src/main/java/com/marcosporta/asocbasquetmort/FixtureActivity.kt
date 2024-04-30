@@ -92,13 +92,11 @@ class FixtureActivity : AppCompatActivity() {
                     if (jsonArray.length() == 0) {
                         Toast.makeText(this, "No hay partidos", Toast.LENGTH_LONG).show()
                     }else{
-                        println("MIRAR ACA 4 ------------> entre al else ${jsonArray.length()} // ")
                         var contador = 0
                         var fecha = 1
                         var hora = ""
                         var titulo = "null"
                         for(i in 0 until jsonArray.length()){
-                            println("MIRAR ACA 2 ------------> $fecha // $titulo // $i // ${jsonArray.length()}")
                             val jsonObject=jsonArray.getJSONObject(i)
 
                             //Accediendo a un campo de la base de datos (fecha)
@@ -107,7 +105,6 @@ class FixtureActivity : AppCompatActivity() {
                             val ptslocalBD = jsonObject.getString("ptsl")
                             val tituloBD = jsonObject.getString("titulo")
                             val tipoBD = jsonObject.getString("tipo")
-                            println("MIRAR ACA ------------> $fechaBD y $ $tituloBD // $titulo // $i")
 
                             //Imprimir "titulo" si es de playoffs sino fecha
                             if(tipoBD == "playoffs" && tituloBD != titulo){
