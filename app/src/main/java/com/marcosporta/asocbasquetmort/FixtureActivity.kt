@@ -1,6 +1,5 @@
 package com.marcosporta.asocbasquetmort
 
-import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
@@ -31,6 +30,8 @@ class FixtureActivity : AppCompatActivity() {
     val configuracion= RequestConfiguration.Builder().setTestDeviceIds(testId).build()
 
     var tbFixture:TableLayout?=null
+    lateinit var spinnerFixture:Spinner
+    var torneoSeleccionado:String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,6 +40,30 @@ class FixtureActivity : AppCompatActivity() {
         MobileAds.setRequestConfiguration(configuracion)
         RequestConfiguration.Builder().setTestDeviceIds(testId)
         MobileAds.initialize(this) {}
+
+        //SPINNERS
+        //Zonas
+        spinnerFixture = findViewById(R.id.sp_fixture)
+        val listaZona = resources.getStringArray(R.array.torneos)
+
+        val adaptadorFixture = ArrayAdapter(this,R.layout.style_spinner,listaZona)
+        spinnerFixture.adapter = adaptadorFixture
+
+        spinnerFixture.onItemSelectedListener = object:
+            AdapterView.OnItemSelectedListener{
+            //Cuando tengo un elemento seleccionado.
+            override fun onItemSelected(parent: AdapterView<*>, view: View?, pos: Int, id: Long) {
+                torneoSeleccionado = spinnerFixture.selectedItem.toString()
+
+                //Funcionalidad para realizar las consultas.
+                if(torneoSeleccionado != "Seleccionar torneo"){
+                    consultarPartidos(torneoSeleccionado)
+                }
+            }
+            //Cuando NO tengo un elemento seleccionado.
+            override fun onNothingSelected(parent: AdapterView<*>) {
+            }
+        }
 
         //Banner
         mAdView = findViewById(R.id.bannerFixture)
@@ -51,82 +76,89 @@ class FixtureActivity : AppCompatActivity() {
         supportActionBar!!.setBackgroundDrawable(ColorDrawable(Color.parseColor("#FFA000")))
 
         tbFixture=findViewById(R.id.tbFixture)
-
-        llenarTablaTempRegular("https://marcosporta.site/morterenseapp/registros.php")
     }
 
-    //Click en boton Temp. Regular
-    fun clickTablaTempRegular(view: View){
-        llenarTablaTempRegular("https://marcosporta.site/morterenseapp/registros.php")
-    }
-
-    //Click en boton Playoffs
-    fun clickTablaPlayoffs(view: View){
+    //Funcion al elegir en el spinner
+    fun consultarPartidos(torneo:String){
         tbFixture?.removeAllViews()
         val queue=Volley.newRequestQueue(this)
-        val url="https://marcosporta.site/morterenseapp/registrosplayoffs2.php"
+        val url="https://marcosporta.site/morterenseapp/partidos$torneo.php"
         val jsonObjectRequest=JsonObjectRequest(
             Request.Method.GET,url,null,
             { response ->
                 try {
                     val jsonArray=response.getJSONArray("data")
 
-                    var titulo = ""
-                    var hora = ""
+                    if (jsonArray.length() == 0) {
+                        Toast.makeText(this, "No hay partidos", Toast.LENGTH_LONG).show()
+                    }else{
+                        println("MIRAR ACA 4 ------------> entre al else ${jsonArray.length()} // ")
+                        var contador = 0
+                        var fecha = 1
+                        var hora = ""
+                        var titulo = "null"
+                        for(i in 0 until jsonArray.length()){
+                            println("MIRAR ACA 2 ------------> $fecha // $titulo // $i // ${jsonArray.length()}")
+                            val jsonObject=jsonArray.getJSONObject(i)
 
-                    for(i in 0 until jsonArray.length() ){
-                        val jsonObject=jsonArray.getJSONObject(i)
+                            //Accediendo a un campo de la base de datos (fecha)
+                            val fechaBD = jsonObject.getInt("fecha")
+                            val horaBD = jsonObject.getString("diahora")
+                            val ptslocalBD = jsonObject.getString("ptsl")
+                            val tituloBD = jsonObject.getString("titulo")
+                            val tipoBD = jsonObject.getString("tipo")
+                            println("MIRAR ACA ------------> $fechaBD y $ $tituloBD // $titulo // $i")
 
-                        //Accediendo a un campo de la base de datos (fecha)
-                        val horaBD = jsonObject.getString("diahora")
-                        val tituloBD = jsonObject.getString("titulo")
-                        val ptslocalBD = jsonObject.getString("ptsl")
+                            //Imprimir "titulo" si es de playoffs sino fecha
+                            if(tipoBD == "playoffs" && tituloBD != titulo){
+                                val registro2 = LayoutInflater.from(this).inflate(R.layout.tabla_row_fecha, null, false)
+                                val colNumeroFecha = registro2.findViewById<View>(R.id.colNumeroFecha) as TextView
+                                colNumeroFecha.text = tituloBD
+                                tbFixture?.addView(registro2)
+                                titulo = tituloBD
+                            }
+                            if(tipoBD == "regular" && fechaBD != contador){
+                                val registro2 = LayoutInflater.from(this).inflate(R.layout.tabla_row_fecha, null, false)
+                                val colNumeroFecha = registro2.findViewById<View>(R.id.colNumeroFecha) as TextView
+                                colNumeroFecha.text = getString(R.string.fecha_para_temp_regular,fecha)
+                                tbFixture?.addView(registro2)
+                                fecha += 1
+                                contador += 1
+                            }
+                            //Imprime la fecha calendario
+                            if(horaBD != "" && horaBD != hora && ptslocalBD == " "){
+                                val registro3=LayoutInflater.from(this).inflate(R.layout.tabla_row_calendario,null,false)
+                                val filaCalendario=registro3.findViewById<View>(R.id.filaCalendario) as TextView
+                                filaCalendario.text=jsonObject.getString("diahora")
+                                tbFixture?.addView(registro3)
+                                hora = horaBD
+                            }
 
-                        //Imprime encabezados de los titulos, Ej Cuartos - J1.
-                        if(tituloBD != titulo){
-                            val registro2 = LayoutInflater.from(this).inflate(R.layout.tabla_row_fecha, null, false)
-                            val colNumeroFecha = registro2.findViewById<View>(R.id.colNumeroFecha) as TextView
-                            colNumeroFecha.text = tituloBD
-                            tbFixture?.addView(registro2)
-                            //contArray += 1
-                            titulo = tituloBD
+                            val registro=LayoutInflater.from(this).inflate(R.layout.tabla_row_fixture,null,false)
+                            val colEquipoL=registro.findViewById<View>(R.id.colEquipoL) as TextView
+                            val colPtsL=registro.findViewById<View>(R.id.colPtsL) as TextView
+                            val colPtsV=registro.findViewById<View>(R.id.colPtsV) as TextView
+                            val colEquipoV=registro.findViewById<View>(R.id.colEquipoV) as TextView
+                            val colEscL=registro.findViewById<ImageView>(R.id.imageEscL)
+                            val colEscV=registro.findViewById<ImageView>(R.id.imageEscV)
+                            colEquipoL.text=jsonObject.getString("equipol")
+                            colPtsL.text=jsonObject.getString("ptsl")
+                            colPtsV.text=jsonObject.getString("ptsv")
+                            colEquipoV.text=jsonObject.getString("equipov")
+
+                            val equipol = jsonObject.getString("equipol")
+                            val imageFileName = equipoImagenMap[equipol]
+                            val equipov = jsonObject.getString("equipov")
+                            val imageFileNameV = equipoImagenMap[equipov]
+
+                            if(imageFileName != null && imageFileNameV != null){
+                                val bitmap = getBitmapFromAssets(this,imageFileName)
+                                val bitmapV = getBitmapFromAssets(this,imageFileNameV)
+                                colEscL.setImageBitmap(bitmap)
+                                colEscV.setImageBitmap(bitmapV)
+                            }
+                            tbFixture?.addView(registro)
                         }
-                        //Imprime la fecha calendario
-                        if(horaBD != "" && horaBD != hora && ptslocalBD == " "){
-                            val registro3=LayoutInflater.from(this).inflate(R.layout.tabla_row_calendario,null,false)
-                            val filaCalendario=registro3.findViewById<View>(R.id.filaCalendario) as TextView
-                            filaCalendario.text=jsonObject.getString("diahora")
-                            println("MIRAR ACA ------------> $ptslocalBD // $horaBD y $hora")
-                            tbFixture?.addView(registro3)
-                            hora = horaBD
-                        }
-
-
-                        val registro=LayoutInflater.from(this).inflate(R.layout.tabla_row_fixture,null,false)
-                        val colEquipoL=registro.findViewById<View>(R.id.colEquipoL) as TextView
-                        val colPtsL=registro.findViewById<View>(R.id.colPtsL) as TextView
-                        val colPtsV=registro.findViewById<View>(R.id.colPtsV) as TextView
-                        val colEquipoV=registro.findViewById<View>(R.id.colEquipoV) as TextView
-                        colEquipoL.text=jsonObject.getString("equipol")
-                        colPtsL.text=jsonObject.getString("ptsl")
-                        colPtsV.text=jsonObject.getString("ptsv")
-                        colEquipoV.text=jsonObject.getString("equipov")
-                        val colEscL=registro.findViewById<ImageView>(R.id.imageEscL)
-                        val colEscV=registro.findViewById<ImageView>(R.id.imageEscV)
-
-                        val equipol = jsonObject.getString("equipol")
-                        val imageFileName = equipoImagenMap[equipol]
-                        val equipov = jsonObject.getString("equipov")
-                        val imageFileNameV = equipoImagenMap[equipov]
-
-                        if(imageFileName != null && imageFileNameV != null){
-                            val bitmap = getBitmapFromAssets(this,imageFileName)
-                            val bitmapV = getBitmapFromAssets(this,imageFileNameV)
-                            colEscL.setImageBitmap(bitmap)
-                            colEscV.setImageBitmap(bitmapV)
-                        }
-
-                        tbFixture?.addView(registro)
                     }
                 }catch (e: JSONException){
                     e.printStackTrace()
@@ -137,83 +169,6 @@ class FixtureActivity : AppCompatActivity() {
         )
         queue.add(jsonObjectRequest)
     }
-
-    //Funcion general, al pasarle una url y un texto te completa la tabla -> Temporada regular
-    fun llenarTablaTempRegular(url : String){
-        tbFixture?.removeAllViews()
-        val queue=Volley.newRequestQueue(this)
-        val jsonObjectRequest=JsonObjectRequest(
-            Request.Method.GET,url,null,
-            { response ->
-                try {
-                    val jsonArray=response.getJSONArray("data")
-                    var contador = 0
-                    var fecha = 1
-                    var hora = ""
-                    for(i in 0 until jsonArray.length() ){
-                        val jsonObject=jsonArray.getJSONObject(i)
-
-                        //Accediendo a un campo de la base de datos (fecha)
-                        val fechaBD = jsonObject.getInt("fecha")
-                        val horaBD = jsonObject.getString("diahora")
-                        val ptslocalBD = jsonObject.getString("ptsl")
-                        //println("MIRAR ACA ------------> $fechaBD y $ $fecha // $horaBD // $ptslocal")
-
-                        //Imprime encabezados de las fechas.
-                        if(fechaBD != contador){
-                            val registro2 = LayoutInflater.from(this).inflate(R.layout.tabla_row_fecha, null, false)
-                            val colNumeroFecha = registro2.findViewById<View>(R.id.colNumeroFecha) as TextView
-                            colNumeroFecha.text = getString(R.string.fecha_para_temp_regular,fecha)
-                            tbFixture?.addView(registro2)
-                            fecha += 1
-                            contador += 1
-                        }
-                        //Imprime la fecha calendario
-                        if(horaBD != "" && horaBD != hora && ptslocalBD == " "){
-                            val registro3=LayoutInflater.from(this).inflate(R.layout.tabla_row_calendario,null,false)
-                            val filaCalendario=registro3.findViewById<View>(R.id.filaCalendario) as TextView
-                            filaCalendario.text=jsonObject.getString("diahora")
-                            tbFixture?.addView(registro3)
-                            hora = horaBD
-                        }
-
-                        val registro=LayoutInflater.from(this).inflate(R.layout.tabla_row_fixture,null,false)
-                        val colEquipoL=registro.findViewById<View>(R.id.colEquipoL) as TextView
-                        val colPtsL=registro.findViewById<View>(R.id.colPtsL) as TextView
-                        val colPtsV=registro.findViewById<View>(R.id.colPtsV) as TextView
-                        val colEquipoV=registro.findViewById<View>(R.id.colEquipoV) as TextView
-                        val colEscL=registro.findViewById<ImageView>(R.id.imageEscL)
-                        val colEscV=registro.findViewById<ImageView>(R.id.imageEscV)
-                        colEquipoL.text=jsonObject.getString("equipol")
-                        colPtsL.text=jsonObject.getString("ptsl")
-                        colPtsV.text=jsonObject.getString("ptsv")
-                        colEquipoV.text=jsonObject.getString("equipov")
-
-                        val equipol = jsonObject.getString("equipol")
-                        val imageFileName = equipoImagenMap[equipol]
-                        val equipov = jsonObject.getString("equipov")
-                        val imageFileNameV = equipoImagenMap[equipov]
-
-                        if(imageFileName != null && imageFileNameV != null){
-                            val bitmap = getBitmapFromAssets(this,imageFileName)
-                            val bitmapV = getBitmapFromAssets(this,imageFileNameV)
-                            colEscL.setImageBitmap(bitmap)
-                            colEscV.setImageBitmap(bitmapV)
-                        }
-
-                        tbFixture?.addView(registro)
-
-                    }
-                }catch (e: JSONException){
-                    e.printStackTrace()
-                }
-            }, { error ->
-                Toast.makeText(this,"Error $error ", Toast.LENGTH_LONG).show()
-            }
-        )
-        queue.add(jsonObjectRequest)
-    }
-
     fun getBitmapFromAssets(context: Context, fileName: String): Bitmap? {
         val assetManager = context.assets
         try {

@@ -28,4 +28,12 @@
         <item>Pts de visitante</item>
     </string-array>
 
+    <string-array name="torneos">
+        <item>Seleccionar torneo</item>
+        <item>Apertura</item>
+        <item>Playoffs Apertura</item>
+        <item>Clausura</item>
+        <item>Playoffs Clausura</item>
+    </string-array>
+
 </resources>

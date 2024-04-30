@@ -37,39 +37,18 @@
         app:layout_constraintTop_toBottomOf="@id/tituloFixture"
         android:background="@drawable/style_borde_btn">
 
-        <Button
-            android:id="@+id/btnTempRegular"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+        <Spinner
+            android:id="@+id/sp_fixture"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="2dp"
             android:layout_weight="1"
-            android:background="@drawable/style_btn_color"
-            android:fontFamily="serif-monospace"
-            android:layout_margin="2dp"
-            android:gravity="center"
-            android:letterSpacing="0.05"
-            android:onClick="clickTablaTempRegular"
-            android:text="@string/temp_regular"
-            android:textColor="#000000"
-            android:textSize="15dp"
-            android:textStyle="bold"
-            app:backgroundTint="@null" />
-
-        <Button
-            android:id="@+id/btnPlayoffs"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:fontFamily="serif-monospace"
-            android:layout_margin="2dp"
-            android:gravity="center"
-            android:letterSpacing="0.05"
-            android:onClick="clickTablaPlayoffs"
-            android:text="@string/playoffs"
-            android:textColor="#000000"
-            android:textSize="15dp"
-            android:textStyle="bold"
-            app:backgroundTint="@null"
-            android:background="@drawable/style_btn_color" />
+            android:background="@drawable/style_spinner1"
+            android:spinnerMode="dropdown"
+            android:popupBackground="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
     </TableRow>
 
     <TableRow
